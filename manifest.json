@@ -1,0 +1,13 @@
+{
+  "name": "store-framework",
+  "vendor": "vtex",
+  "version": "0.0.1",
+  "title": "Store Framework Course",
+  "description": "Course App for the Store Framework Course",
+  "dependencies": {},
+  "builders": {
+    "course": "0.x"
+  },
+  "policies": [],
+  "$schema": "https://raw.githubusercontent.com/vtex/node-vtex-api/master/gen/manifest.schema"
+}
