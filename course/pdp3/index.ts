@@ -1,154 +1,101 @@
-import { jsonc } from 'jsonc'
-import { find, keys, prop } from 'ramda'
-
-import { getFile } from '../../../utils'
-
-const stepData: any = {}
-
-export const pdp3 = {
-  before: async (args: any) => {
-    try {
-      stepData.pdp = await getFile(
-        args.ctx,
-        args.installationId,
-        args.owner,
-        args.repo,
-        'store/blocks/product.jsonc',
-        'pdp3'
-      )
-    } catch {
-      throw new Error(
-        "Didn't manage to load a product.jsonc file on your repository :("
-      )
-    }
-  },
-  branch: 'pdp3',
-  issueNumber: 13,
+export default {
   tests: [
+    {
+      description: `Getting the file`,
+      failMsg: `Couldn't get product.jsonc`,
+      test: async ({ ctx }) => {
+        const { getFile } = ctx
+        ctx.pdp = await getFile('store/blocks/product.jsonc')
+      },
+    },
     {
       description: 'Code compilation',
       failMsg: "There's something wrong with your `product.jsonc` file",
-      test: () => {
-        try {
-          stepData.blocks = jsonc.parse(stepData.pdp)
-          return !!stepData.blocks
-        } catch {
-          return false
-        }
+      test: ({ ctx }) => {
+        const { parseJsonc } = ctx
+        ctx.blocks = parseJsonc(ctx.pdp)
+        return !!ctx.blocks
       },
     },
     {
       description: 'Define related products shelf',
-      failMsg:
-        "You didn't define a `shelf.relatedProducts` in the end of the `store.product` template",
-      test: () => {
-        try {
-          stepData.productBlock = prop('store.product', stepData.blocks)
+      failMsg: "You didn't define a `shelf.relatedProducts` in the end of the `store.product` template",
+      test: ({ ctx }) => {
+        ctx.productBlock = ctx.blocks?.['store.product']
 
-          const {
-            productBlock: { children },
-          } = stepData
+        const {
+          productBlock: { children },
+        } = ctx
 
-          return children[2].includes('shelf.relatedProducts')
-        } catch {
-          return false
-        }
+        return children[2].includes('shelf.relatedProducts')
       },
     },
     {
       description: 'Use and define a `stack-layout` on the left column',
       failMsg: "You didn't use and define a `stack-layout` on the left column",
-      test: () => {
-        try {
-          const stackLayoutId = find(
-            (block: string) => block.includes('stack-layout'),
-            keys(stepData.blocks)
-          ) as string
+      test: ({ ctx }) => {
+        const {
+          ramda: { find, keys },
+        } = ctx
+        const stackLayoutId = find((block: string) => block.includes('stack-layout'), keys(ctx.blocks)) as string
 
-          stepData.stackLayout = prop(stackLayoutId, stepData.blocks)
+        ctx.stackLayout = ctx.blocks?.[stackLayoutId]
 
-          const {
-            productBlock: { children: productChildren },
-          } = stepData
+        const {
+          productBlock: { children: productChildren },
+        } = ctx
 
-          const mainRowId = productChildren[1]
+        const mainRowId = productChildren[1]
 
-          const mainRow = prop(mainRowId, stepData.blocks)
+        const mainRow = ctx.blocks?.[mainRowId]
 
-          const leftCol = prop(mainRow.children[0], stepData.blocks)
+        const leftCol = ctx.blocks?.[mainRow.children[0]]
 
-          return stackLayoutId && leftCol.children.includes(stackLayoutId)
-        } catch {
-          return false
-        }
+        return stackLayoutId && leftCol.children.includes(stackLayoutId)
       },
     },
     {
-      description:
-        'Use product images and product brand within the stack layout',
-      failMsg:
-        "You didn't use a `product-images` and a `product-brand` in your `stack-layout` on the left column",
-      test: () => {
-        try {
-          const {
-            stackLayout: { children },
-          } = stepData
+      description: 'Use product images and product brand within the stack layout',
+      failMsg: "You didn't use a `product-images` and a `product-brand` in your `stack-layout` on the left column",
+      test: ({ ctx }) => {
+        const {
+          stackLayout: { children },
+        } = ctx
 
-          return (
-            children[0].includes('product-images') &&
-            children[1].includes('product-brand')
-          )
-        } catch {
-          return false
-        }
+        return children[0].includes('product-images') && children[1].includes('product-brand')
       },
     },
     {
       description: 'Define correct props on `product-brand`',
       failMsg: "You didn't define the props correctly on `product-brand`",
-      test: () => {
-        try {
-          const productBrandId = find(
-            (block: string) => block.includes('product-brand'),
-            keys(stepData.blocks)
-          ) as string
+      test: ({ ctx }) => {
+        const {
+          ramda: { keys, find },
+        } = ctx
+        const productBrandId = find((block: string) => block.includes('product-brand'), keys(ctx.blocks)) as string
 
-          const { props: productBrandProps } = prop(
-            productBrandId,
-            stepData.blocks
-          )
+        const { props: productBrandProps } = ctx.blocks?.[productBrandId]
 
-          return !!productBrandProps.height
-
-        } catch {
-          return false
-        }
+        return !!productBrandProps.height
       },
     },
     {
       description: 'Define correct props on `sku-selector`',
       failMsg: "You didn't define the props correctly on `sku-selector`",
-      test: () => {
-        try {
-          const skuSelectorId = find(
-            (block: string) => block.includes('sku-selector'),
-            keys(stepData.blocks)
-          ) as string
+      test: ({ ctx }) => {
+        const {
+          ramda: { find, keys },
+        } = ctx
+        const skuSelectorId = find((block: string) => block.includes('sku-selector'), keys(ctx.blocks)) as string
 
-          const { props: skuSelectorProps } = prop(
-            skuSelectorId,
-            stepData.blocks
-          )
+        const { props: skuSelectorProps } = ctx.blocks?.[skuSelectorId]
 
-          return Boolean(
-            skuSelectorProps.initialSelection === 'empty' &&
+        return Boolean(
+          skuSelectorProps.initialSelection === 'empty' &&
             skuSelectorProps.showValueNameForImageVariation &&
             skuSelectorProps.showVariationsErrorMessage
-          )
-        } catch {
-          return false
-        }
+        )
       },
     },
   ],
-}
+} as TestCase
