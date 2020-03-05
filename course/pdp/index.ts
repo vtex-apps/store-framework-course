@@ -1,185 +1,112 @@
-import { jsonc } from 'jsonc'
-import { find, keys, prop } from 'ramda'
+const ctx = {}
 
-import { getFile } from '../../../utils'
-
-const stepData: any = {}
-
-export const pdp1 = {
-  before: async (args: any) => {
-    try {
-      stepData.pdp = await getFile(
-        args.ctx,
-        args.installationId,
-        args.owner,
-        args.repo,
-        'store/blocks/product.jsonc',
-        'pdp1'
-      )
-    } catch {
-      throw new Error(
-        "Didn't manage to load a product.jsonc file on your repository :("
-      )
-    }
-  },
-  branch: 'pdp1',
-  issueNumber: 11,
+export default {
   tests: [
+    {
+      description: 'Getting the file',
+      failMsg: `You didn't provide a 'product.jsonc' file`,
+      test: async ({ ctx }) => {
+        ctx.pdp = await ctx.getFile('store/blocks/product.jsonc')
+        return true
+      },
+    },
     {
       description: 'Code compilation',
       failMsg: "There's something wrong with your `product.jsonc` file",
-      test: () => {
-        try {
-          stepData.blocks = jsonc.parse(stepData.pdp)
-          return !!stepData.blocks
-        } catch {
-          return false
-        }
+      test: ({ ctx }) => {
+        ctx.blocks = ctx.parseJsonc(ctx.pdp)
+        return true
       },
     },
     {
       description: 'Crete a product template page',
       failMsg: "You didn't use a `store.product`",
-      test: () => {
-        try {
-          stepData.productBlock = prop('store.product', stepData.blocks)
-
-          return !!stepData.productBlock
-        } catch {
-          return false
-        }
+      test: ({ ctx }) => {
+        ctx.productBlock = ctx.blocks?.['store.product']
+        return !!ctx.productBlock
       },
     },
     {
       description: 'Create a main row inside the product page',
-      failMsg:
-        "You didn't use and define a `flex-layout.row` in your product page",
-      test: () => {
-        try {
-          const used = !!find<string>(
-            elem => elem.includes('flex-layout.row'),
-            stepData.productBlock.children
-          )
+      failMsg: "You didn't use nor defined a `flex-layout.row` in your product page",
+      test: ({ ctx }) => {
+        const {
+          ramda: { keys, prop, find },
+        } = ctx
+        const used = !!find<string>(elem => elem.includes('flex-layout.row'), ctx.productBlock.children)
 
-          stepData.mainRow = prop(
-            find<string>(
-              elem => elem.includes('flex-layout.row'),
-              keys(stepData.blocks)
-            ) as string,
-            stepData.blocks
-          )
+        ctx.mainRow = prop(
+          find<string>(elem => elem.includes('flex-layout.row'), keys(ctx.blocks as object)),
+          ctx.blocks
+        )
 
-          const defined = !!stepData.mainRow
+        const defined = !!ctx.mainRow
 
-          return used && defined
-        } catch {
-          return false
-        }
+        return used && defined
       },
     },
     {
       description: 'Define two columns inside the main row',
-      failMsg:
-        "There aren't two `flex-layout.col` inside your `flex-layout.row`",
-      test: () => {
-        try {
-          const {
-            mainRow: { children },
-          } = stepData
+      failMsg: "There aren't two `flex-layout.col` inside your `flex-layout.row`",
+      test: ({ ctx }) => {
+        const {
+          mainRow: { children },
+          ramda: { find },
+        } = ctx
 
-          return (
-            children.length === 2 &&
-            !find((elem: string) => !elem.includes('flex-layout.col'), children)
-          )
-        } catch {
-          return false
-        }
+        return children.length === 2 && !find((elem: string) => !elem.includes('flex-layout.col'), children)
       },
     },
     {
       description: 'Define `product-images` on the left column',
       failMsg: "You didn't define `product-images` on the left column",
-      test: () => {
-        try {
-          stepData.leftCol = prop(stepData.mainRow.children[0], stepData.blocks)
-          return stepData.leftCol.children[0].includes('product-images')
-        } catch {
-          return false
-        }
+      test: ({ ctx }) => {
+        ctx.leftCol = ctx.blocks?.[ctx.mainRow.children[0]]
+        return ctx.leftCol.children[0].includes('product-images')
       },
     },
     {
-      description:
-        'Define `product-name`, `product-price` and `buy-button` on the right column',
-      failMsg:
-        "You didn't define `product-name`, `product-price` and `buy-button` on the right column",
-      test: () => {
-        try {
-          stepData.rightCol = prop(
-            stepData.mainRow.children[1],
-            stepData.blocks
-          )
+      description: 'Define `product-name`, `product-price` and `buy-button` on the right column',
+      failMsg: "You didn't define `product-name`, `product-price` and `buy-button` on the right column",
+      test: ({ ctx }) => {
+        ctx.rightCol = ctx.blocks?.[ctx.mainRow.children[1]]
+        const {
+          rightCol: { children },
+        } = ctx
 
-          const {
-            rightCol: { children },
-          } = stepData
-
-          return (
-            children.includes('product-name') &&
-            children.includes('product-price') &&
-            children.includes('buy-button')
-          )
-        } catch {
-          return false
-        }
+        return (
+          children.includes('product-name') && children.includes('product-price') && children.includes('buy-button')
+        )
       },
     },
     {
       description: 'Control stretch and alignment of right column',
-      failMsg:
-        "You didn't use the props `preventVerticalStretch` and `verticalAlign`",
-      test: () => {
-        try {
-          const {
-            rightCol: { props: rightColProps },
-          } = stepData
+      failMsg: "You didn't use the props `preventVerticalStretch` and `verticalAlign`",
+      test: ({ ctx }) => {
+        const {
+          rightCol: { props: rightColProps },
+        } = ctx
 
-          return (
-            rightColProps.verticalAlign === 'middle' &&
-            rightColProps.preventVerticalStretch
-          )
-        } catch {
-          return false
-        }
+        return rightColProps.verticalAlign === 'middle' && rightColProps.preventVerticalStretch
       },
     },
     {
       description: 'Define `product-price` with props',
-      failMsg:
-        "You didn't define `product-price` or defined the expected props",
-      test: () => {
-        try {
-          const productPriceId = find(
-            elem => elem.includes('product-price'),
-            keys(stepData.blocks)
-          )
+      failMsg: "You didn't define `product-price` or defined the expected props",
+      test: ({ ctx }) => {
+        const {
+          ramda: { find, keys },
+        } = ctx
+        const productPriceId = find(elem => (elem as any).includes('product-price'), keys(ctx.blocks))
 
-          if (!productPriceId) {
-            return false
-          }
-
-          const { props: productPriceProps } = prop(
-            productPriceId,
-            stepData.blocks
-          )
-
-          return (
-            productPriceProps.showSavings && productPriceProps.showListPrice
-          )
-        } catch {
+        if (!productPriceId) {
           return false
         }
+
+        const { props: productPriceProps } = ctx.blocks?.productPriceId
+
+        return productPriceProps.showSavings && productPriceProps.showListPrice
       },
     },
   ],
-}
+} as TestCase
