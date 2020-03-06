@@ -1,5 +1,3 @@
-const BRANCH_NAME = 'searchlanding'
-
 const EXPECTED_PROPS = ['orderByField', 'hideUnavailableItems', 'maxItemsPerPage', 'queryField', 'mapField']
 
 export default {
@@ -57,7 +55,7 @@ export default {
         } = ctx
         const used = !!find((block: string) => block.includes('image'), Object.keys(ctx.search))
 
-        const image = ctx.search[find((block: string) => block.includes('image'), ctx.landing.blocks)]
+        const image = ctx.search[find((block: string) => block.includes('image'), ctx.landing.blocks) as string]
 
         return used && !!image && image.props.minWidth === '100%' && !!image.props.src
       },
@@ -75,7 +73,7 @@ export default {
         )
 
         ctx.customQueryBlock =
-          ctx.search[find((block: string) => block.includes('search-result-layout.customQuery'), ctx.landing.blocks)]
+          ctx.search[find((block: string) => block.includes('search-result-layout.customQuery'), ctx.landing.blocks) as string]
 
         return used && !!ctx.customQueryBlock
       },

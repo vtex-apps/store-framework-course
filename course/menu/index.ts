@@ -293,4 +293,4 @@ export const menu = {
       },
     },
   ],
-}
+} as TestCase

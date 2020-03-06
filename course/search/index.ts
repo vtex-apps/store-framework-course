@@ -1,5 +1,3 @@
-const BRANCH_NAME = 'search'
-
 const EXPECTED_COMPONENTS = [
   'breadcrumb.search',
   'search-title.v2',
@@ -89,4 +87,4 @@ export default {
       },
     },
   ],
-}
+} as TestCase

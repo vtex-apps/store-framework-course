@@ -1,5 +1,3 @@
-const BRANCH_NAME = 'styles'
-
 const EXPECTED_SEMANTIC_CHANGES = {
   'active-on': {
     'action-secondary': '#52BAB7',
@@ -104,4 +102,4 @@ export default {
       },
     },
   ],
-}
+} as TestCase

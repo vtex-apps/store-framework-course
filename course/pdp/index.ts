@@ -1,5 +1,3 @@
-const ctx = {}
-
 export default {
   tests: [
     {
@@ -31,14 +29,11 @@ export default {
       failMsg: "You didn't use nor defined a `flex-layout.row` in your product page",
       test: ({ ctx }) => {
         const {
-          ramda: { keys, prop, find },
+          ramda: {  find },
         } = ctx
         const used = !!find<string>(elem => elem.includes('flex-layout.row'), ctx.productBlock.children)
 
-        ctx.mainRow = prop(
-          find<string>(elem => elem.includes('flex-layout.row'), keys(ctx.blocks as object)),
-          ctx.blocks
-        )
+        ctx.mainRow = ctx.blocks?.[find<string>(elem => elem.includes('flex-layout.row'), Object.keys(ctx.blocks)) as string]
 
         const defined = !!ctx.mainRow
 

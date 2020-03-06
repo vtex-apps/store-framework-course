@@ -128,7 +128,7 @@ export default {
       failMsg: `You haven't declared ${Object.keys(gabaritoTxtCss).join(', ')} classes for the text`,
       test: ({ ctx }) => {
         const {
-          ramda: { toPairs, difference },
+          ramda: { difference },
         } = ctx
         return difference(Object.keys(gabaritoTxtCss), Object.keys(ctx.parsedCss)).length === 0
       },
@@ -138,15 +138,11 @@ export default {
       failMsg: `You haven't declared the attributes correctly for the text - ${txtCssClass}`,
       test: ({ ctx }) => {
         const {
-          ramda: { toPairs, difference },
+          ramda: { difference },
         } = ctx
-        try {
-          return (
-            difference(Object.keys(gabaritoTxtCss[txtCssClass]), Object.keys(ctx.parsedCss[txtCssClass])).length === 0
-          )
-        } catch {
-          return false
-        }
+        return (
+          difference(Object.keys(gabaritoTxtCss[txtCssClass]), Object.keys(ctx.parsedCss[txtCssClass])).length === 0
+        )
       },
     },
     {
@@ -165,7 +161,7 @@ export default {
       failMsg: `You haven't declared ${Object.keys(gabaritoButton).join(', ')} classes for the button`,
       test: ({ ctx }) => {
         const {
-          ramda: { toPairs, difference },
+          ramda: { difference },
         } = ctx
         return difference(Object.keys(gabaritoButton), Object.keys(ctx.parsedCss)).length === 0
       },
@@ -175,7 +171,7 @@ export default {
       failMsg: `You haven\'t declared the correct css attributes for the button - ${buttonClass}`,
       test: ({ ctx }) => {
         const {
-          ramda: { toPairs, difference },
+          ramda: { difference },
         } = ctx
         return (
           difference(Object.keys(gabaritoButton[buttonClass]), Object.keys(ctx.parsedCss[buttonClass])).length === 0
@@ -188,7 +184,7 @@ export default {
       failMsg: `You haven\'t declared ${metalImgCss} classes and blockClass`,
       test: ({ ctx }) => {
         const {
-          ramda: { toPairs, difference },
+          ramda: { difference },
         } = ctx
         return difference(Object.keys(metalImgCss), Object.keys(ctx.parsedCss)).length === 0
       },
@@ -209,7 +205,7 @@ export default {
       failMsg: `You haven't declared ${Object.keys(vintageImgCss).join(', ')} classes for the Vintage infocard`,
       test: ({ ctx }) => {
         const {
-          ramda: { toPairs, difference },
+          ramda: { difference },
         } = ctx
         return difference(Object.keys(vintageImgCss), Object.keys(ctx.parsedCss)).length === 0
       },
@@ -219,7 +215,7 @@ export default {
       failMsg: `You haven't declared the correct css attributes for the Vintage Infocard - ${vintageClass}`,
       test: ({ ctx }) => {
         const {
-          ramda: { toPairs, difference },
+          ramda: { toPairs },
         } = ctx
         return testPairs(toPairs(vintageImgCss[vintageClass]), toPairs(ctx.parsedCss[vintageClass]), false)
       },
@@ -229,7 +225,7 @@ export default {
       failMsg: `You haven't declared the correct css attributes values for ${buttonClass}`,
       test: ({ ctx }) => {
         const {
-          ramda: { toPairs, difference },
+          ramda: { toPairs },
         } = ctx
         return testPairs(toPairs(gabaritoButton[buttonClass]), toPairs(ctx.parsedCss[buttonClass]), false)
       },
@@ -250,7 +246,7 @@ export default {
       failMsg: `You haven\'t declared the correct css attributes for the button hover - ${buttonHoverClass}`,
       test: ({ ctx }) => {
         const {
-          ramda: { toPairs, difference },
+          ramda: { difference },
         } = ctx
         return (
           difference(Object.keys(gabaritoButtonHover[buttonHoverClass]), Object.keys(ctx.parsedCss[buttonHoverClass]))
@@ -263,7 +259,7 @@ export default {
       failMsg: `You haven't declared the attributes values correctly for the button hover - ${buttonHoverClass}`,
       test: ({ ctx }) => {
         const {
-          ramda: { toPairs, difference },
+          ramda: { toPairs },
         } = ctx
         return testPairs(
           toPairs(gabaritoButtonHover[buttonHoverClass]),

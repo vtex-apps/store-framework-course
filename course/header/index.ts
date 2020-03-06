@@ -88,7 +88,7 @@ export const header = {
       failMsg: `You havent declared ${[headerFull, headerLayoutDesktop, headerLayoutMobile].join(', ')} on you store`,
       test: ({ ctx }) => {
         const {
-          ramda: { difference, equals },
+          ramda: { difference},
         } = ctx
         const templateContainsLayouts =
           difference([headerFull, headerLayoutDesktop, headerLayoutMobile], Object.keys(ctx.jsonBlocks)).length === 0
@@ -119,7 +119,7 @@ export const header = {
       )} correctly inside ${headerLayoutMobile}. Review their names, positioning and parent block.`,
       test: ({ ctx }) => {
         const {
-          ramda: { difference, equals },
+          ramda: {  equals },
         } = ctx
         return equals(ctx.jsonBlocks[headerLayoutMobile].children, mobileHeaderChildren)
       },
