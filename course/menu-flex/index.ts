@@ -1,8 +1,3 @@
-import { jsonc } from 'jsonc'
-import { keys, equals } from 'ramda'
-
-import { getFile } from '../../../utils'
-
 const submenuMajorTitle = 'vtex.menu@2.x:submenu#major'
 const majorMenuTitle = 'vtex.menu@2.x:menu#major'
 
@@ -25,70 +20,44 @@ const imgProps = {
   maxWidth: '200px',
 }
 
-const stepData: any = {}
-
-export const menuflex = {
-  before: async (args: any): Promise<void> => {
-    try {
-      stepData.menu = await getFile(
-        args.ctx,
-        args.installationId,
-        args.owner,
-        args.repo,
-        'store/blocks/menu.jsonc',
-        'menuflex'
-      )
-
-      stepData.menuFlex = await getFile(
-        args.ctx,
-        args.installationId,
-        args.owner,
-        args.repo,
-        'store/blocks/menu-flex.jsonc',
-        'menuflex'
-      )
-    } catch {
-      throw new Error("Couldn't find `menu.jsonc`, `menu-flex.jsonc` files.")
-    }
-  },
-  branch: 'menuflex',
-  issueNumber: 24,
-
+export default {
   tests: [
     {
+      description: 'Getting the file',
+      failMsg: "Couldn't find `menu.jsonc`, `menu-flex.jsonc` files.",
+      test: async ({ ctx }) => {
+        const { getFile } = ctx
+        ctx.menu = await getFile('store/blocks/menu.jsonc')
+
+        ctx.menuFlex = await getFile('store/blocks/menu-flex.jsonc')
+      },
+    },
+    {
       description: 'Code compilation: menu.jsonc',
-      failMsg:
-        "There's something wrong with the format of your `menu.jsonc` file",
-      test: () => {
-        try {
-          stepData.jsonMenu = jsonc.parse(stepData.menu)
-          return !!stepData.jsonMenu
-        } catch {
-          return false
-        }
+      failMsg: "There's something wrong with the format of your `menu.jsonc` file",
+      test: ({ ctx }) => {
+        const { parseJsonc } = ctx
+        ctx.jsonMenu = parseJsonc(ctx.menu)
+        return !!ctx.jsonMenu
       },
     },
 
     {
       description: 'Code compilation: menu-flex.jsonc',
-      failMsg:
-        "There's something wrong with the format of your `menu-flex.jsonc` file",
-      test: () => {
-        try {
-          stepData.jsonMenuFlex = jsonc.parse(stepData.menuFlex)
-          return !!stepData.jsonMenuFlex
-        } catch {
-          return false
-        }
+      failMsg: "There's something wrong with the format of your `menu-flex.jsonc` file",
+      test: ({ ctx }) => {
+        const { parseJsonc } = ctx
+        ctx.jsonMenuFlex = parseJsonc(ctx.menuFlex)
+        return !!ctx.jsonMenuFlex
       },
     },
 
     // {
     //   description: 'menu.jsonc must not contain major appliances submenu',
     //   failMsg: `You  must not declare ${submenuMajorTitle} on your menu.jsonc file`,
-    //   test: () => {
+    //   test: ({ ctx }) => {
     //     try {
-    //       return !stepData.jsonMenu[submenuMajorTitle]
+    //       return !ctx.jsonMenu[submenuMajorTitle]
     //     } catch {
     //       return false
     //     }
@@ -96,56 +65,41 @@ export const menuflex = {
     // },
 
     {
-      description:
-        'Major appliances submenu must contain a flex-layout row as children',
+      description: 'Major appliances submenu must contain a flex-layout row as children',
       failMsg: `You  must declare ${flexRowTitle} as children of ${submenuMajorTitle}`,
-      test: () => {
-        try {
-          return equals(stepData.jsonMenuFlex[submenuMajorTitle].children, [
-            flexRowTitle,
-          ])
-        } catch {
-          return false
-        }
+      test: ({ ctx }) => {
+        const {
+          ramda: { equals },
+        } = ctx
+        return equals(ctx.jsonMenuFlex[submenuMajorTitle].children, [flexRowTitle])
       },
     },
 
     {
       description: 'flex-layout row must be correctly stated',
       failMsg: `You must declare ${flexRowTitle} on menu-flex.jsonc`,
-      test: () => {
-        try {
-          return !!stepData.jsonMenuFlex[flexRowTitle]
-        } catch {
-          return false
-        }
+      test: ({ ctx }) => {
+        return !!ctx.jsonMenuFlex[flexRowTitle]
       },
     },
 
     {
       description: 'flex-layout row must contain two cols as children',
       failMsg: `${flexRowTitle} must have ${flexColMenu}, ${flexColImg} as children `,
-      test: () => {
-        try {
-          return equals(stepData.jsonMenuFlex[flexRowTitle].children, [
-            flexColMenu,
-            flexColImg,
-          ])
-        } catch {
-          return false
-        }
+      test: ({ ctx }) => {
+        const {
+          ramda: { equals },
+        } = ctx
+          return equals(ctx.jsonMenuFlex[flexRowTitle].children, [flexColMenu, flexColImg])
       },
     },
 
     {
       description: 'flex-layout columns must be correctly stated',
       failMsg: `You must declare ${flexColMenu}, ${flexColImg} on menu-flex.jsonc`,
-      test: () => {
+      test: ({ ctx }) => {
         try {
-          return (
-            !!stepData.jsonMenuFlex[flexColMenu] &&
-            !!stepData.jsonMenuFlex[flexColImg]
-          )
+          return !!ctx.jsonMenuFlex[flexColMenu] && !!ctx.jsonMenuFlex[flexColImg]
         } catch {
           return false
         }
@@ -153,91 +107,66 @@ export const menuflex = {
     },
 
     {
-      description:
-        'flex-layout colum must contain major appliances menu as children',
+      description: 'flex-layout colum must contain major appliances menu as children',
       failMsg: `${flexColMenu} must have no props and ${majorMenuTitle} as children`,
-      test: () => {
-        try {
-          const majorMenuAsChildren = equals(
-            stepData.jsonMenuFlex[flexColMenu].children,
-            [majorMenuTitle]
-          )
+      test: ({ ctx }) => {
+        const {
+          ramda: { equals },
+        } = ctx
+        const majorMenuAsChildren = equals(ctx.jsonMenuFlex[flexColMenu].children, [majorMenuTitle])
 
-          return (
-            !stepData.jsonMenuFlex[flexColMenu].props && majorMenuAsChildren
-          )
-        } catch {
-          return false
-        }
+        return !ctx.jsonMenuFlex[flexColMenu].props && majorMenuAsChildren
       },
     },
     {
-      description:
-        'flex-layout colum must contain image and rich-text as children',
+      description: 'flex-layout colum must contain image and rich-text as children',
       failMsg: `${flexColImg} must have  ${imageTitle} and ${richTextTitle} as children`,
-      test: () => {
-        try {
-          return equals(stepData.jsonMenuFlex[flexColImg].children, [
-            imageTitle,
-            richTextTitle,
-          ])
-        } catch {
-          return false
-        }
+      test: ({ ctx }) => {
+        const {
+          ramda: { equals },
+        } = ctx
+        return equals(ctx.jsonMenuFlex[flexColImg].children, [imageTitle, richTextTitle])
       },
     },
 
     {
       description: 'flex-layout colum must contain correct props',
-      failMsg: `${flexColImg} must have  ${keys(imgColProps).join(
-        ', '
-      )} as children`,
-      test: () => {
-        try {
-          return equals(stepData.jsonMenuFlex[flexColImg].props, imgColProps)
-        } catch {
-          return false
-        }
+      failMsg: `${flexColImg} must have  ${Object.keys(imgColProps).join(', ')} as children`,
+      test: ({ ctx }) => {
+        const {
+          ramda: { equals },
+        } = ctx
+        return equals(ctx.jsonMenuFlex[flexColImg].props, imgColProps)
       },
     },
 
     {
       description: 'flex-layout colum must contain correct props',
-      failMsg: `${flexColImg} must have  ${keys(imgColProps).join(
-        ', '
-      )} as children`,
-      test: () => {
-        try {
-          return equals(stepData.jsonMenuFlex[flexColImg].props, imgColProps)
-        } catch {
-          return false
-        }
+      failMsg: `${flexColImg} must have  ${Object.keys(imgColProps).join(', ')} as children`,
+      test: ({ ctx }) => {
+        const {
+          ramda: { equals },
+        } = ctx
+        return equals(ctx.jsonMenuFlex[flexColImg].props, imgColProps)
       },
     },
 
     {
       description: 'image component must be correctly stated',
       failMsg: `You must declare ${imageTitle} on menu-flex.jsonc`,
-      test: () => {
-        try {
-          return !!stepData.jsonMenuFlex[imageTitle]
-        } catch {
-          return false
-        }
+      test: ({ ctx }) => {
+        return !!ctx.jsonMenuFlex[imageTitle]
       },
     },
 
     {
       description: 'image component must contain correct props',
-      failMsg: `You must declare ${keys(imgProps).join(
-        ', '
-      )} on ${imageTitle}. Check their names and values.`,
-      test: () => {
-        try {
-          return equals(stepData.jsonMenuFlex[imageTitle].props, imgProps)
-        } catch {
-          return false
-        }
+      failMsg: `You must declare ${Object.keys(imgProps).join(', ')} on ${imageTitle}. Check their names and values.`,
+      test: ({ ctx }) => {
+        const {
+          ramda: { equals },
+        } = ctx
+        return equals(ctx.jsonMenuFlex[imageTitle].props, imgProps)
       },
     },
   ],

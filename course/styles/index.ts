@@ -1,10 +1,3 @@
-import { prop } from 'ramda'
-
-import { getFile } from '../../../utils'
-import { compareObjects } from '../../../resources/object-compare'
-
-const stepData: any = {}
-
 const BRANCH_NAME = 'styles'
 
 const EXPECTED_SEMANTIC_CHANGES = {
@@ -38,67 +31,76 @@ const EXPECTED_SEMANTIC_CHANGES = {
   },
 } as any
 
-export const styles = {
-  before: async (args: any) => {
-    try {
-      stepData.style = await getFile(
-        args.ctx,
-        args.installationId,
-        args.owner,
-        args.repo,
-        'styles/configs/style.json',
-        BRANCH_NAME
-      )
-    } catch {
-      throw new Error(
-        "Didn't manage to load a style.json file on your repository :("
-      )
-    }
-  },
-  branch: BRANCH_NAME,
-  issueNumber: 16,
+export default {
   tests: [
+    {
+      description: 'Getting the file',
+      failMsg: "Didn't manage to load a style.json file on your repository :(",
+      test: async ({ ctx }) => {
+        const { getFile } = ctx
+        ctx.style = await getFile('styles/configs/style.json')
+      },
+    },
     {
       description: 'Code compilation',
       failMsg: "There's something wrong with your `style.json` file",
-      test: () => {
-        try {
-          stepData.style = JSON.parse(stepData.style)
-          return !!stepData.style
-        } catch {
-          return false
-        }
+      test: ({ ctx }) => {
+        ctx.style = JSON.parse(ctx.style)
+        return !!ctx.style
       },
     },
     {
       description: 'Make the correct color changes',
       failMsg: "You didn't make all the color changes required",
-      test: () => {
-        try {
-          const semanticColors = stepData.style.semanticColors
+      test: ({ ctx }) => {
+        const semanticColors = ctx.style.semanticColors
 
-          return compareObjects(EXPECTED_SEMANTIC_CHANGES, semanticColors, {
-            caseSensitive: false,
-          })
-        } catch {
-          return false
+        function compareObjects(
+          obj1: Record<any, any>,
+          obj2: Record<any, any>,
+          configs: CompareConfigs = { caseSensitive: true }
+        ) {
+          //Loop through properties in object 1
+          for (const p in obj1) {
+            //Check property exists on both objects
+            if (obj1.hasOwnProperty(p) !== obj2.hasOwnProperty(p)) return false
+
+            switch (typeof obj1[p]) {
+              //Deep compare objects
+              case 'object':
+                if (!compareObjects(obj1[p], obj2[p])) return false
+                break
+              //Compare function code
+              case 'function':
+                if (typeof obj2[p] == 'undefined' || (p != 'compare' && obj1[p].toString() != obj2[p].toString()))
+                  return false
+                break
+              case 'string':
+                return configs.caseSensitive ? obj1[p] == obj2[p] : obj1[p].toLowerCase() == obj2[p].toLowerCase()
+              //Compare values
+              default:
+                return obj1[p] == obj2[p]
+            }
+          }
+
+          return true
         }
+
+        interface CompareConfigs {
+          caseSensitive: boolean
+        }
+        return compareObjects(EXPECTED_SEMANTIC_CHANGES, semanticColors, {
+          caseSensitive: false,
+        })
       },
     },
     {
       description: 'Change the heading 1 size to `2.5rem`',
       failMsg: "You didn't change the heading 1 size to `2.5rem`",
-      test: () => {
-        try {
-          const typography = stepData.style.typography
+      test: ({ ctx }) => {
+          const typography = ctx.style.typography
 
-          return (
-            prop('heading-1', typography.styles).fontSize.replace(/ /g, '') ===
-            '2.5rem'
-          )
-        } catch {
-          return false
-        }
+          return  typography.styles?.['heading-1'].fontSize.replace(/ /g, '') === '2.5rem'
       },
     },
   ],

@@ -66,8 +66,6 @@ export default {
           caseSensitive: boolean
         }
 
-        ctx.compareObjects = compareObjects
-
         const ANSWER_OBJECT = {
           shelf: {
             blocks: ['product-summary.shelf'],
