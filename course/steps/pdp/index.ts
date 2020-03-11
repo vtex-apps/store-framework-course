@@ -98,7 +98,7 @@ export default {
           return false
         }
 
-        const { props: productPriceProps } = ctx.blocks?.productPriceId
+        const { props: productPriceProps } = ctx.blocks?.[productPriceId]
 
         return productPriceProps.showSavings && productPriceProps.showListPrice
       },

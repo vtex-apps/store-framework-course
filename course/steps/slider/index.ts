@@ -9,6 +9,7 @@ export default {
         const getHomeFileResult = await getFile('store/blocks/home.jsonc')
         ctx.sliderLayoutFileContent = parseJsonc(getSliderLayoutFileResult)
         ctx.homeFileContent = parseJsonc(getHomeFileResult)
+        return !!getHomeFileResult
       },
     },
     {

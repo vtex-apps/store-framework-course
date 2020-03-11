@@ -6,6 +6,7 @@ export default {
       test: async ({ ctx }) => {
         const { getFile } = ctx
         ctx.blocks = await getFile('store/blocks/home.jsonc')
+        return !!ctx.blocks
       },
     },
     {
@@ -13,8 +14,8 @@ export default {
       failMsg: "There's something wrong with your `blocks.jsonc` file",
       test: ({ ctx }) => {
         const { parseJsonc } = ctx
-        ctx.parsedBlocks = !!parseJsonc(ctx.blocks)
-        return ctx.parsedBlocks
+        ctx.parsedBlocks = parseJsonc(ctx.blocks)
+        return !!ctx.parsedBlocks
       },
     },
     {

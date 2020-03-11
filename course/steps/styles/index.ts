@@ -37,6 +37,7 @@ export default {
       test: async ({ ctx }) => {
         const { getFile } = ctx
         ctx.style = await getFile('styles/configs/style.json')
+        return true
       },
     },
     {

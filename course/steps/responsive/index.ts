@@ -44,6 +44,7 @@ export default {
       failMsg: "Couldn't find `home.jsonc` file.",
       test: async ({ ctx, ctx: { getFile } }) => {
         ctx.blocks = await getFile('store/blocks/home.jsonc')
+        return !!ctx.blocks
       },
     },
     {

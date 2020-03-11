@@ -8,8 +8,8 @@ export default {
       test: async ({ ctx }) => {
         const { getFile } = ctx
         ctx.search = await getFile('store/blocks/search-landing.jsonc')
-
         ctx.routes = await getFile('store/routes.json')
+        return true
       },
     },
     {

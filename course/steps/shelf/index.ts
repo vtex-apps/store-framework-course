@@ -7,6 +7,7 @@ export default {
         const { parseJsonc, getFile } = ctx
         const getFileResult = await getFile('store/blocks/home.jsonc')
         ctx.blocksFileContent = parseJsonc(getFileResult)
+        return !!ctx.blocksFileContent
       },
     },
     {

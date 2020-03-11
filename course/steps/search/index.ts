@@ -17,6 +17,7 @@ export default {
       test: async ({ ctx }) => {
         const { getFile } = ctx
         ctx.search = await getFile('store/blocks/search.jsonc')
+        return true
       },
     },
     {

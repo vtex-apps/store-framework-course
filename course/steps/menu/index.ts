@@ -46,7 +46,7 @@ const electronicsMenu = {
   },
 }
 
-export const menu = {
+export default {
   tests: [
     {
       description: 'Fetching files',
@@ -56,6 +56,7 @@ export const menu = {
         ctx.menuItems = await getFile('store/blocks/menu-items.jsonc')
         ctx.menu = await getFile('store/blocks/menu.jsonc')
         ctx.header = await getFile('store/blocks/header.jsonc')
+        return true
       },
     },
     {

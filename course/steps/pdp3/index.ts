@@ -6,6 +6,7 @@ export default {
       test: async ({ ctx }) => {
         const { getFile } = ctx
         ctx.pdp = await getFile('store/blocks/product.jsonc')
+        return true
       },
     },
     {

@@ -6,6 +6,7 @@ export default {
       test: async ({ ctx }) => {
         const { getFile } = ctx
         ctx.blocks = await getFile('store/blocks/home.jsonc')
+        return !!ctx.blocks
       },
     },
     {

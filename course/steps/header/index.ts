@@ -62,7 +62,7 @@ const richText = {
   },
 }
 
-export const header = {
+export default {
   tests: [
     {
       description: 'Getting files',
@@ -71,6 +71,7 @@ export const header = {
         const { getFile } = ctx
         ctx.blocks = await getFile('store/blocks/header.jsonc')
         ctx.iconPack = await getFile('styles/iconpacks/iconpack.svg')
+        return true
       },
     },
     {

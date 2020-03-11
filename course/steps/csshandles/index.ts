@@ -77,6 +77,7 @@ export default {
       test: async ({ ctx }) => {
         const { getFile } = ctx
         ctx.css = await getFile('styles/css/vtex.store-components.css')
+        return !!ctx.css
       },
     },
     {

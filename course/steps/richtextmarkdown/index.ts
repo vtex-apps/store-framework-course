@@ -5,8 +5,9 @@ export default {
       failMsg: "Didn't manage to load a about-us.jsonc file on your repository :(",
       test: async ({ ctx }) => {
         const { parseJsonc, getFile } = ctx
-        const getFileResult = await getFile('richtextmarkdown')
+        const getFileResult = await getFile('store/blocks/about-us.jsonc')
         ctx.blocksFileContent = parseJsonc(getFileResult)
+        return true
       },
     },
     {

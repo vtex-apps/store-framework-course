@@ -11,6 +11,7 @@ export default {
         const { getFile, parseJsonc } = ctx
         ctx.search = await getFile('store/blocks/search.jsonc')
         ctx.default = parseJsonc(await getFile('store/blocks/default.jsonc'))
+        return true
       },
     },
     {
