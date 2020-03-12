@@ -1,6 +1,6 @@
 # Criando templates customizados
 
-## :sparkles: **Branch:** template
+## :sparkles: **Branch:** custom-template
 
 ## Introdução
 

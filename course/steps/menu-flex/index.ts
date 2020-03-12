@@ -30,6 +30,7 @@ export default {
         ctx.menu = await getFile('store/blocks/menu.jsonc')
 
         ctx.menuFlex = await getFile('store/blocks/menu-flex.jsonc')
+        return true
       },
     },
     {

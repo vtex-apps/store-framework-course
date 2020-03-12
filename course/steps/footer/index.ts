@@ -7,6 +7,7 @@ export default {
         const { getFile, parseJsonc } = ctx
         const getFooterFileResult = await getFile('store/blocks/footer.jsonc')
         ctx.footerFileContent = parseJsonc(getFooterFileResult)
+        return true
       },
     },
     {
