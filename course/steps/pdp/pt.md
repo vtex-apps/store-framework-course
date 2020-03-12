@@ -1,6 +1,6 @@
 # Página de produto
 
-## :sparkles: **Branch:** pdp1
+## :sparkles: **Branch:** pdp
 
 ## Introdução
 

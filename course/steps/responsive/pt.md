@@ -1,6 +1,6 @@
 # Tornando seu conteúdo responsivo
 
-## :sparkles: **Branch:** responsiveimage
+## :sparkles: **Branch:** responsive
 
 ## Introdução
 

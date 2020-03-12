@@ -1,6 +1,6 @@
 # Construindo uma landing customizada de busca
 
-## :sparkles: **Branch:** searchlanding
+## :sparkles: **Branch:** landing
 
 ## Introdução
 

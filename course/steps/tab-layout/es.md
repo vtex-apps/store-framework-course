@@ -1,6 +1,6 @@
 # Layout de pestañas 
 
-## :sparkles: **Branch:** tablayout
+## :sparkles: **Branch:** tab-layout
 
 ## Introducción
 

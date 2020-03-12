@@ -1,6 +1,6 @@
 # Layout de abas
 
-## :sparkles: **Branch:** tablayout
+## :sparkles: **Branch:** tab-layout
 
 ## Introdução
 
