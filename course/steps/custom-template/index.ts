@@ -82,7 +82,7 @@ export default {
           },
           'rich-text#about-title': {
             props: {
-              text: '# Sobre a FlatFlat',
+              text: '# About FlatFlat',
             },
           },
           'rich-text#about-content': {
