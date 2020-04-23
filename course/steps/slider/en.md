@@ -1,8 +1,8 @@
 # Blocks Carousel
 
-## :sparkles: **Branch:** slider-layout
+## :sparkles: **Branch:** slider
 
-## Introdução
+## Introduction
 
 The Slider Layout, just as the Flex Layout, is a flexible way of creating a new block based on other blocks, using `children`. It allows slider from other blocks to be created, such as `info-card` and even `flex-layout`, for example.
 

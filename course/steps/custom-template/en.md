@@ -112,7 +112,7 @@ Let's create a page containing information about your store, as in the example b
 4. After declaring `flex-layout.row`, use the code in example given above to complete the page layout;
 5. In the `store` folder, create a file called `routes.json`;
 6. In this file, declare an `/about-us` path;
-7. Once the code is linked, access `{workspace}--appliancetheme.myvtex.com/about-us` to see your new landing page.
+7. Restart `vtex link` and once the code is linked, access `{workspace}--appliancetheme.myvtex.com/about-us` to see your new landing page.
 
 ----
 

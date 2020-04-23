@@ -39,7 +39,7 @@ Below, we have an example of a flex layout comprised of a `flex-layout.row` with
     }
   },
   
-  "rich-text#deletar": {
+  "rich-text#delete": {
     "props": {
       "text": "I'll be deleted soon"
     }

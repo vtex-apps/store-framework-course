@@ -78,14 +78,5 @@ export default {
         return ctx.missingSearchComp.length === 0
       },
     },
-    {
-      description: 'Use the correct layout props',
-      failMsg: "You did't use `pagination` and `preventRouteChange` on `search-result-layout.desktop`'s props",
-      test: ({ ctx }) => {
-        const { props } = ctx.searchDesktop
-
-        return props.pagination
-      },
-    },
   ],
 } as TestCase

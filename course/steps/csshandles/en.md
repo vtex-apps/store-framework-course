@@ -106,7 +106,7 @@ Check out the result by linking your app.
 2. Based on the [**Info Card**](https://vtex.io/docs/components/all/vtex.store-components/info-card) Handles, define a maximum width (`max-width`) of `1260px` for all info cards, a margin of `0 auto` and a padding of `0`.
 3. Change the component's title color to `black`;
 4. Put the title in `bold`;
-5. Change the background color during hover to `white`.
+5. Change the call-to-action buttons background color during hover to `white`.
 6. In parallel to the `vintage` blockClass, apply a new block class called `metal` to the info card `info-card#button-left` and apply the `#e1e1e1` background color to it.
 
 ![image](https://user-images.githubusercontent.com/12139385/70145478-ead8f980-167e-11ea-8951-5d4b98e6d5c0.png)
