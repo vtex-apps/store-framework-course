@@ -1,6 +1,6 @@
 # Blocks Carousel
 
-## :sparkles: **Branch:** slider-layout
+## :sparkles: **Branch:** slider
 
 ## Introdução
 

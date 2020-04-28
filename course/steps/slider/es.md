@@ -1,6 +1,6 @@
 # Carrusel de bloques 
 
-## :sparkles: **Branch:** slider-layout
+## :sparkles: **Branch:** slider
 
 ## Introducción
 
@@ -72,14 +72,3 @@ En esta actividad, crearemos un slider de marcas para nuestro sitio web:
 
 :information_source: Recuerde acceder a la documentación del [Slider Layout](https://vtex.io/docs/components/layout/vtex.slider-layout) e [Image](https://vtex.io/docs/components/general/vtex.store-components/image) si tiene alguna duda durante la actividad. 
 
----
-
-### :no_entry_sign: ¿Perdido? 
-
-¿Hay algún problema con este paso? ¿Qué tal si nos envía un feedback? :pray:
-
-[Crear feedback](https://docs.google.com/forms/d/e/1FAIpQLSeaWrm0Hogm-txm5Ww6mUa68eDuE3WnpFjUSVJ3Wi3dnmCb7A/viewform?usp=pp_url&entry.1784529524=Carrossel+de+blocos) 
-
-----
-
-Si aún tiene alguna duda sobre cómo enviar su respuesta, puede revisar [aquí](https://github.com/{{ user.username }}/store-framework/issues/3).
