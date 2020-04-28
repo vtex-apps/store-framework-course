@@ -93,7 +93,8 @@ export default {
 
         return Boolean(
           skuSelectorProps.initialSelection === 'empty' &&
-            skuSelectorProps.showValueNameForImageVariation &&
+            (skuSelectorProps.showValueNameForImageVariation || 
+            skuSelectorProps.showValueForVariation === 'image') &&
             skuSelectorProps.showVariationsErrorMessage
         )
       },
