@@ -16,7 +16,7 @@ export default {
       test: ({ ctx }) => {
         const tabListItem1LabelProp: string = ctx.blocksFileContent['tab-list.item#home1']['props']['label']
 
-        return tabListItem1LabelProp === 'Sobre'
+        return tabListItem1LabelProp === 'Sobre' || tabListItem1LabelProp === 'About'
       },
     },
     {
@@ -39,7 +39,10 @@ export default {
         const bold1 = !!richTextTextProp.match(/# ?\*\* ?Nossa/)
         const bold2 = !!richTextTextProp.match(/da VTEX! ?\*\*/)
 
-        return bold1 && bold2
+        const bold1_en = !!richTextTextProp.match(/# ?\*\* ?Our/)
+        const bold2_en = !!richTextTextProp.match(/VTEX hackathon! ?\*\*/)
+
+        return (bold1 && bold2) || (bold1_en && bold2_en)
       },
     },
   ],

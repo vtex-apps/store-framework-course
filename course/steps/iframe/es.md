@@ -39,7 +39,7 @@ Vamos a mostrar una publicación de Instagram en nuestra tienda:
 
 1. Cambie el label de la pestaña "Electronics" a "Instagram".
 2. En el contenido de la pestaña Instagram, borre el  `rich-text` e incluya un bloque `iframe` .
-3. En las props del `iframe`, muestre el contenido del link `https://www.instagram.com/p/B37Zfd6FobU/embed` en un  container de 800px de anchura por 1000px de altura.
+3. En las props del `iframe`, muestre el contenido del link `https://www.instagram.com/p/B973Qp8BacC/embed` en un  container de 800px de anchura por 1000px de altura.
 
 :information_source: Recuerde acceder a la documentación del [Iframe](https://vtex.io/docs/components/all/vtex.iframe/) si tiene alguna duda durante la actividad. 
 
