@@ -67,6 +67,39 @@ export default {
       failMsg: 'Your code did not match the sample one provided in the instructions for this step',
       test: ({ ctx }) => {
         const { compareObjects } = ctx
+
+        const ANSWER_OBJECT_EN = {
+          'store.custom#about-us': {
+            blocks: ['flex-layout.row#about-us'],
+          },
+          'flex-layout.row#about-us': {
+            children: ['image#about-us', 'flex-layout.col#text-about-us'],
+          },
+          'flex-layout.col#text-about-us': {
+            children: ['rich-text#about-title', 'rich-text#about-content'],
+            props: {
+              preventVerticalStretch: true,
+            },
+          },
+          'rich-text#about-title': {
+            props: {
+              text: '# About FlatFlat',
+            },
+          },
+          'rich-text#about-content': {
+            props: {
+              text:
+                ' FlatFlat is an electronics store with a long standing tradition for creating modern and vintage items. Out objective is to create home appliances that make your house stand out, no matter your style. Merely 2 months old, we\'re already the store with the most beautiful products among all VTEX stores. We are currently building our site with the aim of giving our customers an unforgetable experience with our brand!',
+            },
+          },
+          'image#about-us': {
+            props: {
+              src: 'https://appliancetheme.vteximg.com.br/arquivos/cozinha-about-us.png',
+              maxHeight: '600px',
+            },
+          },
+        }
+
         const ANSWER_OBJECT = {
           'store.custom#about-us': {
             blocks: ['flex-layout.row#about-us'],
@@ -99,7 +132,7 @@ export default {
           },
         }
 
-        return compareObjects(ctx.blocksFileContent, ANSWER_OBJECT)
+        return compareObjects(ctx.blocksFileContent, ANSWER_OBJECT) || compareObjects(ctx.blocksFileContent, ANSWER_OBJECT_EN)
       },
     },
     {
