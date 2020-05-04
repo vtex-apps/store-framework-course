@@ -29,39 +29,39 @@ Construya una página de producto usando los bloques [`product-images`](https://
 
 1. Una **línea** en `store.product` .
 
-```json
-{
- "store.product": {
-    "children": [
-      "flex-layout.row#main"
-    ]
-  }
-}
-```
+    ```json
+    {
+    "store.product": {
+        "children": [
+          "flex-layout.row#main"
+        ]
+      }
+    }
+    ```
 
 2. Dentro de la **línea** debe haber **dos columnas**.
 
-```json
-"flex-layout.row#main": { 
-  "props": { 
-    "marginTop": 6
-  },
-  "children": [
-    "flex-layout.col#left",
-    "flex-layout.col#right"
-  ]
-}
-```
+    ```json
+    "flex-layout.row#main": { 
+      "props": { 
+        "marginTop": 6
+      },
+      "children": [
+        "flex-layout.col#left",
+        "flex-layout.col#right"
+      ]
+    }
+    ```
 
 3. Dentro de la columna de la izquierda debe haber un [`product-images`](https://vtex.io/docs/components/all/vtex.store-components/product-images).
 
-```json
-"flex-layout.col#left": {
-  "children": [
-    "product-images"
-  ]
-}
-```
+    ```json
+    "flex-layout.col#left": {
+      "children": [
+        "product-images"
+      ]
+    }
+    ```
 
 4. Dentro de la columna derecha debe estar el [`product-name`](https://vtex.io/docs/components/all/vtex.store-components/product-name), [`product-price`](https://vtex.io/docs/components/all/vtex.store-components/product-price) y [`buy-button`](https://vtex.io/docs/app/vtex.store-components/buy-button).
 

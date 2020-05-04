@@ -64,11 +64,7 @@ Although quite many, all these blocks are relatively simple and work very well w
 
 ![image](https://user-images.githubusercontent.com/18701182/69843046-7f3cf980-1244-11ea-8309-8a26071cd6f0.png)
 
-Copy the code above in `search.jsonc` and define a `search-result-layout.desktop` with the following characteristics:
-
-- Pagination type such as 'Show more' (more on the `pagination` prop [here](https://vtex.io/docs/components/search-related/vtex.search-result/#layout-api));
-
-Having the following, in the order mentioned below:
+Copy the code above in `search.jsonc` and define a `search-result-layout.desktop` having the following, in the order mentioned below:
 
 - `breadcrumb.search`;
 - `search-title.v2`;

@@ -45,56 +45,56 @@ En esta actividad, entenderemos mejor sobre la configuración del [Menú](https:
 1. En el archivo `header.jsonc`, agregue `header-row#menu`  como último ítem en la lista de children del bloque `header-layout.desktop` (configurado en la [actividad anterior]) para que el Menú pueda ser renderizado por el Header de la tienda.
 2. Copie y peque el siguiente código para declarar el bloque `header-row#menu`:
 
-```json
-"header-row#menu": {
-  "children": [
-    "header-spacer",
-    "vtex.menu@2.x:menu#categories",
-    "header-spacer"
-  ]
-},
-```
+    ```json
+    "header-row#menu": {
+      "children": [
+        "header-spacer",
+        "vtex.menu@2.x:menu#categories",
+        "header-spacer"
+      ]
+    },
+    ```
 
 3. También debemos preocuparnos con el Menú en el layout de otros dispositivos, como mobile. Por eso, agregue [`drawer`](https://vtex.io/docs/components/all/vtex.store-drawer/) como primer ítem de children del bloque `header-row#main-mobile` .
 
 4. Pegue el siguiente código en el archivo `menu.jsonc` para renderizar horizontalmente los 3 ítems de su Menú principal:
 
-```json
-{
- "vtex.menu@2.x:menu#categories": {
-   "children": [
-     "menu-item#major-appliances",
-     "menu-item#small-appliances",
-     "menu-item#electronics"
-   ],
+    ```json
+    {
+      "vtex.menu@2.x:menu#categories": {
+        "children": [
+          "menu-item#major-appliances",
+          "menu-item#small-appliances",
+          "menu-item#electronics"
+        ],
 
-   "props":{
-     "orientation": "horizontal"
-   }
-},
-```
+        "props":{
+          "orientation": "horizontal"
+        }
+    },
+    ```
 
 5. Como vimos en la introducción, un *Menu Item* puede permitir la configuración de un Submenú dentro de este que, a su vez, puede tener otro Menú con *Menu Items*. Cree entonces el Submenú de *Major Appliance*, aún en el archivo `menu.jsonc`, de acuerdo con el siguiente ejemplo: 
 
-```json
-"vtex.menu@2.x:submenu#major":{
-  "children":[
-    "vtex.menu@2.x:menu#major"
-  ]
-},
-```
+    ```json
+    "vtex.menu@2.x:submenu#major":{
+      "children":[
+        "vtex.menu@2.x:menu#major"
+      ]
+    },
+    ```
 
 6. Siguiendo el formato establecido por el bloque `vtex.menu@2.x:menu#categories`, construya el Menú secundario de *Major Appliances* declarado en el último paso en el archivo `menu.jsonc` . Usted debe definir `vertical` como valor de la prop `orientation` y configurar los siguientes *Menu Items* en la lista de children del bloque:  `menu-item#refrigerators`, `menu-item#ovens` y `menu-item#washers` .
 
 7. Cree también el Submenú de *Small Appliances*:
 
-```json
- "vtex.menu@2.x:submenu#small":{
-   "children":[
-     "vtex.menu@2.x:menu#small"
-   ]
-},
-```
+    ```json
+    "vtex.menu@2.x:submenu#small":{
+      "children":[
+        "vtex.menu@2.x:menu#small"
+      ]
+    },
+    ```
 
 8. Construya ahora el Menú secundario de *Small Appliances* en el archivo `menu.jsonc` . Así como se hizo para *Major Appliance*, usted debe definir `vertical` como valor de la prop `orientation` y configurar los siguientes *Menu Items* en la lista de children del bloque:  `menu-item#mixers`, `menu-item#toasters` y `menu-item#coffee` .
 

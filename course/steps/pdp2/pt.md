@@ -25,35 +25,35 @@ Evolua a página de produto adicionando os outros 4 blocos listados acima da seg
 
 1. Defina um `breadcrumb` logo no início antes da **linha principal** do produto;
 
-```json
-"store.product": {
-  "children": [
-    "breadcrumb",
-    "flex-layout.row#main"
-  ]
-}
-```
+    ```json
+    "store.product": {
+      "children": [
+        "breadcrumb",
+        "flex-layout.row#main"
+      ]
+    }
+    ```
 
 2. Defina o `product-identifier.product` logo abaixo do `product-name`;
 3. Crie uma **linha** logo abaixo do preço com o `sku-selector` e o `product-quantity` como children;
 
-```json
-{
-  ...
-    "children": [ 
-      "product-price",
-      "flex-layout.row#qty-sku"
-    ]
-  },
-  "flex-layout.row#qty-sku": {
-    "children": [
-      "sku-selector",
-      "product-quantity"
-    ]
-  },
-  ...
-}
-```
+    ```json
+    {
+      ...
+        "children": [ 
+          "product-price",
+          "flex-layout.row#qty-sku"
+        ]
+      },
+      "flex-layout.row#qty-sku": {
+        "children": [
+          "sku-selector",
+          "product-quantity"
+        ]
+      },
+      ...
+    }
+    ```
 
 4. Defina `shipping-simulator` logo abaixo da linha com o SKU Selector e o Product Quantity
 

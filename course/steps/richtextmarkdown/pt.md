@@ -41,9 +41,9 @@ Outras propriedades do componente `rich-text` podem ser encontrados na [document
 
 2. No conteúdo `rich-text` associado a essa aba, utilize o texto abaixo:
 
-```
-# Nossa História \n ### Nascemos de uma hackathon interna da VTEX! \n Isso mesmo. A primeira Hackatheme (hackathon de temas de loja) da VTEX teve 3 finalistas. Um deles foi a FlatFlat, essa loja que vocês estão acessando agora. A FlatFlat foi criada pelos engenheiros Afonso Praça e Sávio Muniz, pelos designers Lucas Falcão e Augusto Barbosa, e pelo diretor de novos negócios Maurício Baum. Como a loja foi criada por profissionais com os mais diversos backgrounds, o resultado ficou óbvio: foram finalistas com o layout mais legal dentre os participantes.
-```
+    ```
+    # Nossa História \n ### Nascemos de uma hackathon interna da VTEX! \n Isso mesmo. A primeira Hackatheme (hackathon de temas de loja) da VTEX teve 3 finalistas. Um deles foi a FlatFlat, essa loja que vocês estão acessando agora. A FlatFlat foi criada pelos engenheiros Afonso Praça e Sávio Muniz, pelos designers Lucas Falcão e Augusto Barbosa, e pelo diretor de novos negócios Maurício Baum. Como a loja foi criada por profissionais com os mais diversos backgrounds, o resultado ficou óbvio: foram finalistas com o layout mais legal dentre os participantes.
+    ```
 
 3. Coloque o título e o subtítulo em negrito.
 

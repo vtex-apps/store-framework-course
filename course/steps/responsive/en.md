@@ -37,7 +37,7 @@ First, we must declare the blocks in the `store.home` template:
 `"responsive-layout.desktop#desktop",
  "responsive-layout.mobile#mobile"`
 
-Them, we must declare these blocks as follows: 
+Then, we must declare these blocks as follows: 
 
 ```json
 
@@ -87,27 +87,27 @@ During this activity, we will play around a little with the [Rich Text](https://
 3. Add `image#desktop` as a child of `responsive-layout.desktop#desktop`. Repeat the process with `image#mobile` and `responsive-layout.mobile#mobile`;
 4. Declare the following Image blocks:
 
-```json
-"image#desktop": {
-  "props": {
-    "src": "https://appliancetheme.vteximg.com.br/arquivos/Responsive-Image-Desktop.jpg?q=1",
-    "link": {
-      "url": "/small-appliances/coffee-makers"
-    } ,
-    "alt": "Coffee Makers Collection"
-  }
-},
+    ```json
+    "image#desktop": {
+      "props": {
+        "src": "https://appliancetheme.vteximg.com.br/arquivos/Responsive-Image-Desktop.jpg?q=1",
+        "link": {
+          "url": "/small-appliances/coffee-makers"
+        } ,
+        "alt": "Coffee Makers Collection"
+      }
+    },
 
-"image#mobile": {
-  "props": {
-    "src": "https://appliancetheme.vteximg.com.br/arquivos/Responsive-Image-Mobile.jpg?q=1",
-    "link": {
-      "url": "/small-appliances/coffee-makers"
-    } ,
-    "alt": "Coffee Makers Collection"
-  }
-},
-```
+    "image#mobile": {
+      "props": {
+        "src": "https://appliancetheme.vteximg.com.br/arquivos/Responsive-Image-Mobile.jpg?q=1",
+        "link": {
+          "url": "/small-appliances/coffee-makers"
+        } ,
+        "alt": "Coffee Makers Collection"
+      }
+    },
+    ```
 
 5. When analyzing the [componente Image](https://vtex.io/docs/components/general/vtex.store-components/image) props, set the two images' max width to `100%`.
 

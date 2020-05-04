@@ -143,22 +143,22 @@ Nesta atividade, vamos criar a estrutura simples de um tab layout, conforme imag
 8. Depois, inclua uma prop `tabId` em cada `tab-content.item` de maneira que aconteça o link entre o `tab-list` criado anteriormente e `tab-content`;
 9. Por fim, adicione os `rich-text` e declare suas props conforme o código abaixo:
   
-  ```json
-  "rich-text#home1": {
-    "props": {
-      "text": "Área do conteúdo da tab-list.item com  tabId = majorAppliances",
-      "textPosition": "CENTER",
-      "font": "t-heading-3"
+    ```json
+    "rich-text#home1": {
+      "props": {
+        "text": "Área do conteúdo da tab-list.item com  tabId = majorAppliances",
+        "textPosition": "CENTER",
+        "font": "t-heading-3"
+      }
+    },
+    "rich-text#home2": {
+      "props": {
+        "text": "Área do conteúdo da tab-list.item com  tabId = electronics",
+        "textPosition": "CENTER",
+        "font": "t-heading-3"
+      }
     }
-  },
-  "rich-text#home2": {
-    "props": {
-      "text": "Área do conteúdo da tab-list.item com  tabId = electronics",
-      "textPosition": "CENTER",
-      "font": "t-heading-3"
-    }
-  }
-  ```
+    ```
   
   :information_source: Lembre-se de acessar a documentação [Tab Layout](https://vtex.io/docs/components/layout/vtex.tab-layout) e do [Rich Text](https://vtex.io/docs/components/all/vtex.rich-text/) caso tenha alguma dúvida durante a atividade.
 

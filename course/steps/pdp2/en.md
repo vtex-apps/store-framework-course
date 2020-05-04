@@ -25,35 +25,35 @@ Develop the product page by adding the 4 blocks listed above to`product.jsonc` a
 
 1. Define a `breadcrumb` right before the product's **main line**;
 
-```json
-"store.product": {
-  "children": [
-    "breadcrumb",
-    "flex-layout.row#main"
-  ]
-}
-```
+    ```json
+    "store.product": {
+      "children": [
+        "breadcrumb",
+        "flex-layout.row#main"
+      ]
+    }
+    ```
 
 2. Define the `product-identifier.product` right under the `product-name`;
 3. Create a **line** right under the price, having `sku-selector` and `product-quantity` as children;
 
-```json
-{
-  ...
-    "children": [ 
-      "product-price",
-      "flex-layout.row#qty-sku"
-    ]
-  },
-  "flex-layout.row#qty-sku": {
-    "children": [
-      "sku-selector",
-      "product-quantity"
-    ]
-  },
-  ...
-}
-```
+    ```json
+    {
+      ...
+        "children": [ 
+          "product-price",
+          "flex-layout.row#qty-sku"
+        ]
+      },
+      "flex-layout.row#qty-sku": {
+        "children": [
+          "sku-selector",
+          "product-quantity"
+        ]
+      },
+      ...
+    }
+    ```
 
 4. Define `shipping-simulator` right under the line containing the SKU Selector and Product Quantity
 

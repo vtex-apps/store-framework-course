@@ -26,38 +26,38 @@ Develop the product page by adding the step below to `product.jsonc`:
 
 1. Declare a [`shelf.relatedProducts`](https://vtex.io/docs/app/vtex.shelf) under the product's **main line**
 
-```json
-"store.product": {
-  "children": [
-    "breadcrumb",
-    "flex-layout.row#main",
-    "shelf.relatedProducts"
-  ]
-}
-```
+    ```json
+    "store.product": {
+      "children": [
+        "breadcrumb",
+        "flex-layout.row#main",
+        "shelf.relatedProducts"
+      ]
+    }
+    ```
 
 :warning: Remember, this product shelf is only displayed for the `/3-colors-retro-stand-mixer/p` product.
 
 2. From  the left column, change `product-images` with a `stack-layout` declaration;
 
-```json
-"flex-layout.col#left": {
-  "children": [
-    "stack-layout#brand"
-  ]
-}
-```
+    ```json
+    "flex-layout.col#left": {
+      "children": [
+        "stack-layout#brand"
+      ]
+    }
+    ```
 
 3. Define `stack-layout` and set `product-images` and [`product-brand`](https://vtex.io/docs/components/product-related/vtex.store-components/product-brand) as children;
 
-```json
-"stack-layout#brand": {
-  "children": [
-    "product-images",
-    "product-brand"
-  ]
-}
-```
+    ```json
+    "stack-layout#brand": {
+      "children": [
+        "product-images",
+        "product-brand"
+      ]
+    }
+    ```
 
 4. Consult the [documentation](https://vtex.io/docs/components/product/vtex.store-components/product-brand#configuration) to change the way in which `product-brand` is displayed. You should make the logo appear with a height of **30** and include the `displayMode: "logo"` prop. 
 

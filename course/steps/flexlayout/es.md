@@ -55,21 +55,21 @@ A continuación, tenemos un ejemplo de flex layout compuesto de un `flex-layout.
 4. Declare el bloque `flex-layout.col` en su archivo `home.jsonc` con dos componentes de imagen como children: `image#electronics` y `image#major-appliance`, *en este orden*.
 5. Defina los bloques `image` con las siguientes props:
 
-```json
-...
-"image#electronics": {
-  "props": {
-    "src": "https://appliancetheme.vteximg.com.br/assets/vtex.file-manager-graphql/images/electronics_banner___25d69b49f8224b369375e68513b4d593.png",
-    "maxWidth": "100%"
-  }
-},
-"image#major-appliance": {
-  "props": {
-    "src": "https://appliancetheme.vteximg.com.br/assets/vtex.file-manager-graphql/images/major_appliance_banner___bb10093866a127345ddfbcca3efa5022.png",
-    "maxWidth": "100%"
-  }
-}
-```
+    ```json
+    ...
+    "image#electronics": {
+      "props": {
+        "src": "https://appliancetheme.vteximg.com.br/assets/vtex.file-manager-graphql/images/electronics_banner___25d69b49f8224b369375e68513b4d593.png",
+        "maxWidth": "100%"
+      }
+    },
+    "image#major-appliance": {
+      "props": {
+        "src": "https://appliancetheme.vteximg.com.br/assets/vtex.file-manager-graphql/images/major_appliance_banner___bb10093866a127345ddfbcca3efa5022.png",
+        "maxWidth": "100%"
+      }
+    }
+    ```
 
 El resultado obtenido debe ser semejante a este:
 

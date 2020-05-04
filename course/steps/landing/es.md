@@ -21,27 +21,27 @@ con el que puede controlar la búsqueda que debería hacer nuestro *landing page
 
 1. Defina una ruta nueva (`store.custom#landing`) en el archivo `routes.json` .
 
-```json
-"store.custom#landing": {
-  "path": "/landing"
-}
-```
+    ```json
+    "store.custom#landing": {
+      "path": "/landing"
+    }
+    ```
 
 2. Cree un nuevo archivo en la carpeta de bloques llamado `search-landing.jsonc` .
 3. Cree un nuevo template custom `store.custom#landing` .
 4. Defina el bloque [`image`](https://vtex.io/docs/components/all/vtex.store-components/image) como uno de los bloques de este template. Este bloque debe tener props `minWidth` de 100% y una imagen de su elección.
 5. Haga lo mismo con `search-result-layout.customQuery`:
 
-```json
-{
-  "store.custom#landing": { 
-    "blocks": [
-      "image#landingbanner", 
-      "search-result-layout.customQuery"
-    ]
-  }
-}
-```
+    ```json
+    {
+      "store.custom#landing": { 
+        "blocks": [
+          "image#landingbanner", 
+          "search-result-layout.customQuery"
+        ]
+      }
+    }
+    ```
 
 6. Defina el bloque `search-result-layout.customQuery` con [prop de *querySchema*](https://vtex.io/docs/app/vtex.search-result#queryschema) que:
   - Ordene por fecha de lanzamiento de forma descendente.

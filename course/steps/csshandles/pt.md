@@ -19,22 +19,22 @@ Analisando a [recipe](https://vtex.io/docs/recipes/style/using-css-handles-for-s
 1. Criar um novo arquivo dentro da pasta `CSS` com o nome `vtex.{AppName}.css`
 2. Usar o CSS Handle do componente que será customizado dentro deste arquivo seguindo o formato abaixo:
 
-```css
-.{CSSHandle} {
-    {PropriedadeDeCSS}: {ValorDesejado};
-    {PropriedadeDeCSS}: {ValorDesejado};
-}
-```
+    ```css
+    .{CSSHandle} {
+        {PropriedadeDeCSS}: {ValorDesejado};
+        {PropriedadeDeCSS}: {ValorDesejado};
+    }
+    ```
 
 3. Na falta de CSS Handles, aplicar CSS Selectors permitidos, como é o caso do `:global(vtex-{componentName})`.
 4. Para aplicar CSS em um bloco específico e não a todos os blocos daquele tipo, usa-se o recurso de blockClass, que aparece ao lado dos handles de css ao inspecionar seu código. As blockClass devem ser declaradas como uma prop no bloco em questão, e então referenciado no arquivo de estilo como mostrado abaixo:
 
-```css
-.{CSSHandle}--{blockClass} {
-    {PropriedadeDeCSS}: {ValorDesejado};
-    {PropriedadeDeCSS}: {ValorDesejado};
-}
-```
+    ```css
+    .{CSSHandle}--{blockClass} {
+        {PropriedadeDeCSS}: {ValorDesejado};
+        {PropriedadeDeCSS}: {ValorDesejado};
+    }
+    ```
 
 ## Customizando o Info Card
 

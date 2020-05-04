@@ -41,9 +41,9 @@ Other properties of the `rich-text` component can be found in the [Store Framewo
 
 2. In the `rich-text` content linked to this tab, use the text below:
 
-```
-# Our history \n ### We were born from an internal VTEX hackathon! \n That's right. VTEX's first Hackatheme (store theme hackathon) had 3 finalists. One of them was FlatFlat, the store that you're accessing now. FlatFlat was created by the engineers Afonso Praça and Sávio Muniz, together with designers Lucas Falcão and Augusto Barbosa, and new business director Maurício Baum. As the store was created by profissionals having the most diverse backgrounds, the result was an obvious one: they became the finalists with coolest layout among participants.
-```
+    ```
+    # Our history \n ### We were born from an internal VTEX hackathon! \n That's right. VTEX's first Hackatheme (store theme hackathon) had 3 finalists. One of them was FlatFlat, the store that you're accessing now. FlatFlat was created by the engineers Afonso Praça and Sávio Muniz, together with designers Lucas Falcão and Augusto Barbosa, and new business director Maurício Baum. As the store was created by profissionals having the most diverse backgrounds, the result was an obvious one: they became the finalists with coolest layout among participants.
+    ```
 
 3. Insert the title and subtitle in bold.
 
