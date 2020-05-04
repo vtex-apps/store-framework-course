@@ -38,10 +38,7 @@ In the last step, we've looked at the search page and its main components. We al
           "search-fetch-previous",
           "flex-layout.row#results",
           "search-fetch-more"
-        ],
-        "props": {
-          "pagination": "show-more"
-        }
+        ]
       },
       "flex-layout.row#results": {
         "children": [

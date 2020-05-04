@@ -40,10 +40,7 @@ En el último step conocimos la página de búsqueda y sus componentes principal
           "search-fetch-previous",
           "flex-layout.row#results",
           "search-fetch-more"
-        ],
-        "props": {
-          "pagination": "show-more"
-        }
+        ]
       },
       "flex-layout.row#results": {
         "children": [
