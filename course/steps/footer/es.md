@@ -38,19 +38,19 @@ No vamos a implementar el menú en esta actividad, porque ya fue visto en el con
 1. En el archivo `footer.jsonc`, copie el código anterior para utilizarlo en su tema.
 2. Declare el siguiente bloque en seguida:
 
-```json
-  "flex-layout.row#footer-1-desktop": {
-    "children": [
-      "flex-layout.col#footer-left-desktop",
-      "flex-layout.col#footer-right-desktop"
-    ],
-    "props": {
-      "blockClass": "footer-row",
-      "paddingTop": 7,
-      "paddingBottom": 7
-    }
-  }
-```
+    ```json
+      "flex-layout.row#footer-1-desktop": {
+        "children": [
+          "flex-layout.col#footer-left-desktop",
+          "flex-layout.col#footer-right-desktop"
+        ],
+        "props": {
+          "blockClass": "footer-row",
+          "paddingTop": 7,
+          "paddingBottom": 7
+        }
+      }
+    ```
 
 3. Basado en el bloque anterior, construya el `flex-layout.col#footer-left-desktop` con el siguiente children: `accepted-payment-methods` .
 

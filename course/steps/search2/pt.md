@@ -14,46 +14,46 @@ No último step conhecemos a página de busca e seus principais componentes. Tam
 
 2. Substitua ambos acima por uma linha de topo que inclua os blocos removidos:
 
-```json
-...
-"flex-layout.row#top": {
-  "children": [
-    "total-products.v2",
-    "order-by.v2"
-  ]
-}
-...
-```
+    ```json
+    ...
+    "flex-layout.row#top": {
+      "children": [
+        "total-products.v2",
+        "order-by.v2"
+      ]
+    }
+    ...
+    ```
 
 3. Remova o `search-content` e o `filter-navigator.v3` do `search-result-layout.desktop` e crie uma linha de resultados;
 
 4. Na linha de resultado coloque outras duas colunas:
 
-```json
-{
-  ...
-  "search-result-layout.desktop": {
-    "children": [
-      "breadcrumb.search",
-      "search-title.v2",
-      "flex-layout.row#top",
-      "search-fetch-previous",
-      "flex-layout.row#results",
-      "search-fetch-more"
-    ],
-    "props": {
-      "pagination": "show-more"
+    ```json
+    {
+      ...
+      "search-result-layout.desktop": {
+        "children": [
+          "breadcrumb.search",
+          "search-title.v2",
+          "flex-layout.row#top",
+          "search-fetch-previous",
+          "flex-layout.row#results",
+          "search-fetch-more"
+        ],
+        "props": {
+          "pagination": "show-more"
+        }
+      },
+      "flex-layout.row#results": {
+        "children": [
+          "flex-layout.col#filter",
+          "flex-layout.col#search"
+        ]
+      },
+      ...
     }
-  },
-  "flex-layout.row#results": {
-    "children": [
-      "flex-layout.col#filter",
-      "flex-layout.col#search"
-    ]
-  },
-  ...
-}
-```
+    ```
 
 5. Configure a prop `width` da coluna `filter` para `20%`.
 
@@ -63,30 +63,30 @@ Para finalizar, vamos usar o mesmo **Resumo de Produto**(`product-summary`) que 
 
 7. Defina seu `search-content` com os blocos `gallery` e `not-found`:
 
-```json
-{
-  ...
-  "search-content": {
-    "blocks": ["gallery", "not-found"]
-  }
-  ...
-}
-```
+    ```json
+    {
+      ...
+      "search-content": {
+        "blocks": ["gallery", "not-found"]
+      }
+      ...
+    }
+    ```
 
 8. Use o `product-summary.shelf` nas props da Gallery:
 
-```json
-{
-  ...
-  "search-content": {
-    "blocks": ["gallery", "not-found"]
-  },
-  "gallery": {
-    "blocks": ["product-summary.shelf"]
-  }
-  ...
-}
-```
+    ```json
+    {
+      ...
+      "search-content": {
+        "blocks": ["gallery", "not-found"]
+      },
+      "gallery": {
+        "blocks": ["product-summary.shelf"]
+      }
+      ...
+    }
+    ```
 
 9.  No bloco`product-summary.shelf` que se encontra no arquivo `default.jsonc`, inclua `product-summary-sku-selector` acima de `product-summary-buy-button`.
 

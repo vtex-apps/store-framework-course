@@ -20,27 +20,27 @@ A query schema é uma das [props do search result custom query](https://vtex.io/
 
 1. Defina uma rota nova (`store.custom#landing`) no arquivo `routes.json`;
 
-```json
-"store.custom#landing": {
-  "path": "/landing"
-}
-```
+    ```json
+    "store.custom#landing": {
+      "path": "/landing"
+    }
+    ```
 
 2. Crie um novo arquivo na pasta de blocos chamado `search-landing.jsonc`;
 3. Crie um novo template custom `store.custom#landing`;
 4. Defina o bloco [`image`](https://vtex.io/docs/components/all/vtex.store-components/image) como um dos blocos desse template. Este bloco deve possuir props `minWidth` de 100% e uma imagem a sua escolha.
 5. Faça o mesmo com o `search-result-layout.customQuery`:
 
-```json
-{
-  "store.custom#landing": { 
-    "blocks": [
-      "image#landingbanner", 
-      "search-result-layout.customQuery"
-    ]
-  }
-}
-```
+    ```json
+    {
+      "store.custom#landing": { 
+        "blocks": [
+          "image#landingbanner", 
+          "search-result-layout.customQuery"
+        ]
+      }
+    }
+    ```
 
 6. Defina o bloco `search-result-layout.customQuery` com [prop de *querySchema*](https://vtex.io/docs/app/vtex.search-result#queryschema) que:
   - Ordena por data de lançamento de forma descrescente;

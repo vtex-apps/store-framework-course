@@ -26,38 +26,38 @@ Evolua a página de produto adicionando os passos abaixo ao arquivo `product.jso
 
 1. Declare um [`shelf.relatedProducts`](https://vtex.io/docs/app/vtex.shelf) abaixo da **linha principal** de produto
 
-```json
-"store.product": {
-  "children": [
-    "breadcrumb",
-    "flex-layout.row#main",
-    "shelf.relatedProducts"
-  ]
-}
-```
+    ```json
+    "store.product": {
+      "children": [
+        "breadcrumb",
+        "flex-layout.row#main",
+        "shelf.relatedProducts"
+      ]
+    }
+    ```
 
 :warning: Lembre-se, esta prateleira de produtos aparece somente no produto `/3-colors-retro-stand-mixer/p`.
 
 2. Troque `product-images` na coluna da esquerda por uma declaração de `stack-layout`;
 
-```json
-"flex-layout.col#left": {
-  "children": [
-    "stack-layout#brand"
-  ]
-}
-```
+    ```json
+    "flex-layout.col#left": {
+      "children": [
+        "stack-layout#brand"
+      ]
+    }
+    ```
 
 3. Defina o `stack-layout` e coloque como filhos o `product-images` e [`product-brand`](https://vtex.io/docs/components/product-related/vtex.store-components/product-brand);
 
-```json
-"stack-layout#brand": {
-  "children": [
-    "product-images",
-    "product-brand"
-  ]
-}
-```
+    ```json
+    "stack-layout#brand": {
+      "children": [
+        "product-images",
+        "product-brand"
+      ]
+    }
+    ```
 
 4. Consulte a [documentação](https://vtex.io/docs/components/product/vtex.store-components/product-brand#configuration) para mudar a forma que o `product-brand` é exibido. Você deve fazer o logo aparecer com altura de **30** e incluir a prop `displayMode: "logo"`. 
 

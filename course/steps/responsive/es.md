@@ -89,27 +89,27 @@ En esta actividad, juguemos un poco con el markdown del [Rich Text](https://vtex
 3. Agregue `image#desktop` como children de `responsive-layout.desktop#desktop` . Haga lo  mismo con `image#mobile`  en `responsive-layout.mobile#mobile` .
 4. Declare los siguientes bloques de Image:
 
-```json
-"image#desktop": {
-  "props": {
-    "src": "https://appliancetheme.vteximg.com.br/arquivos/Responsive-Image-Desktop.jpg?q=1",
-    "link": {
-      "url": "/small-appliances/coffee-makers"
-    } ,
-    "alt": "Coffee Makers Collection"
-  }
-},
+    ```json
+    "image#desktop": {
+      "props": {
+        "src": "https://appliancetheme.vteximg.com.br/arquivos/Responsive-Image-Desktop.jpg?q=1",
+        "link": {
+          "url": "/small-appliances/coffee-makers"
+        } ,
+        "alt": "Coffee Makers Collection"
+      }
+    },
 
-"image#mobile": {
-  "props": {
-    "src": "https://appliancetheme.vteximg.com.br/arquivos/Responsive-Image-Mobile.jpg?q=1",
-    "link": {
-      "url": "/small-appliances/coffee-makers"
-    } ,
-    "alt": "Coffee Makers Collection"
-  }
-},
-```
+    "image#mobile": {
+      "props": {
+        "src": "https://appliancetheme.vteximg.com.br/arquivos/Responsive-Image-Mobile.jpg?q=1",
+        "link": {
+          "url": "/small-appliances/coffee-makers"
+        } ,
+        "alt": "Coffee Makers Collection"
+      }
+    },
+    ```
 
 5. Analizando las props del [componente Image](https://vtex.io/docs/components/general/vtex.store-components/image), defina la anchura máxima de las dos imágenes como `100%` .
 

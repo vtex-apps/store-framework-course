@@ -29,39 +29,39 @@ Build a product page using the following blocks in `product.jsonc` and declare i
 
 1. A **line** in `store.product`;
 
-```json
-{
- "store.product": {
-    "children": [
-      "flex-layout.row#main"
-    ]
-  }
-}
-```
+    ```json
+    {
+    "store.product": {
+        "children": [
+          "flex-layout.row#main"
+        ]
+      }
+    }
+    ```
 
 2. That **line** should have **two columns**;
 
-```json
-"flex-layout.row#main": { 
-  "props": { 
-    "marginTop": 6
-  },
-  "children": [
-    "flex-layout.col#left",
-    "flex-layout.col#right"
-  ]
-}
-```
+    ```json
+    "flex-layout.row#main": { 
+      "props": { 
+        "marginTop": 6
+      },
+      "children": [
+        "flex-layout.col#left",
+        "flex-layout.col#right"
+      ]
+    }
+    ```
 
 3. The left column must contain a [`product-images`](https://vtex.io/docs/components/all/vtex.store-components/product-images);
 
-```json
-"flex-layout.col#left": {
-  "children": [
-    "product-images"
-  ]
-}
-```
+    ```json
+    "flex-layout.col#left": {
+      "children": [
+        "product-images"
+      ]
+    }
+    ```
 
 4. The right column must contain the [`product-name`](https://vtex.io/docs/components/all/vtex.store-components/product-name), [`product-price`](https://vtex.io/docs/components/all/vtex.store-components/product-price) and [`buy-button`](https://vtex.io/docs/app/vtex.store-components/buy-button);
 
