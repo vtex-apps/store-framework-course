@@ -17,7 +17,7 @@ But it's also possible for you to create a custom landing page. In this case, yo
 
 ## Creating a Landing Page
 
-Just a few steps a needed to create a custom landing page:
+Just a few steps are needed to create a custom landing page:
 
 1. Create a new template in your store's theme
 2. Create a new path to access this template
@@ -26,7 +26,7 @@ Just a few steps a needed to create a custom landing page:
 
 A template defines the page layout. However, if you want to create a custom page, you will also need to create a new template in your theme.
 
-Let's imagine that your wanted to created a simple page containing information about your store. Inside the `blocks` folder, you can create a file that would contain the following code, declaring a new template for a custom page,
+Let's imagine that you want to create a simple page containing information about your store. Inside the `blocks` folder, you can create a file that would contain the following code, declaring a new template for a custom page,
 
 ```json
 {
@@ -39,7 +39,7 @@ Let's imagine that your wanted to created a simple page containing information a
 
 where `{templateName}` must be replaced with the template's identifying name. 
 
-Then, you should fill in the code with the components needed to create the layout. Below we can an example of such implementation:
+Then, you should fill in the code with the components needed to create the layout. Below we have an example of such implementation:
 
 ```json
 {
