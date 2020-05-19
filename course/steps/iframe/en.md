@@ -39,7 +39,7 @@ Let's display an Instagram post on your store page:
 
 1. Change the label of the "Electronics" tab to "Instagram";
 2. In the Instagram tab's content, delete the `rich-text` and include an `iframe` block;
-3. In the `iframe` props, display the following link content in a 800px-wide by 1000px-high container: `https://www.instagram.com/p/B973Qp8BacC/embed`
+3. In the `iframe` props, display the following link content in a 800px-wide by 1000px-high container: `https://www.instagram.com/p/B37Zfd6FobU/embed`
 
 :information_source: Remember to access the [Iframe documentation](https://vtex.io/docs/components/all/vtex.iframe/) if you have any questions during this activity.
 
