@@ -1,12 +1,12 @@
 # Menu 
 
-## :sparkles: \*\*Branch:\*\* menu 
+## :sparkles: **Branch:** menu 
 
 ## Introduction 
 
-Having already configured and implemented the header, let's now add it to the  [*Menu*](https://vtex.io/docs/components/all/vtex.menu/). Configuring the Menu is an important step in building your theme, since it's the block that's responsible for the user's *navigation* in your store. Because of its function and relevance, the Menu possesses a complex hierarchical structure, which involves *menu items*, *submenus* and, based on the latter, any Store Framework block (such as other Menus e Menu Items). Below we can see an image highlighting the Menu block's structure in practice:  
+Having already configured and implemented the header, let's now add it to the  [**Menu**](https://vtex.io/docs/components/all/vtex.menu/). Configuring the Menu is an important step in building your theme, since it's the block that's responsible for the user's *navigation* in your store. Because of its function and relevance, the Menu possesses a complex hierarchical structure, which involves *menu items*, *submenus* and, based on the latter, any Store Framework block (such as other Menus e Menu Items). Below we can see an image highlighting the Menu block's structure in practice:  
 
-!\[menu\](https://user-images.githubusercontent.com/52087100/70004800-5cf9f300-1546-11ea-81fc-369e4bb58ed5.png) 
+![menu](https://user-images.githubusercontent.com/52087100/70004800-5cf9f300-1546-11ea-81fc-369e4bb58ed5.png) 
 
 ## Configuring the Menu 
 
@@ -30,7 +30,7 @@ When compared to some of the other blocks, the Menu's configuration may seem mor
 
 ## Activity 
 
-This activity will help us understand more about configuring the [Menu\](https://vtex.io/docs/components/all/vtex.menu/), in addition to its existing hierarchy based on building *Menu Items* and Submenus. 
+This activity will help us understand more about configuring the [Menu](https://vtex.io/docs/components/all/vtex.menu/), in addition to its existing hierarchy based on building *Menu Items* and Submenus. 
 1. In \`header.jsonc\`, add \`header-row#menu\` as the last item on the \`header-layout.desktop\` block's child list (configured during the previous activity), so that the Menu can be rendered by the store's Header; 
 2. Copy and paste the code below to declare the `header-row#menu` block:
 
@@ -85,11 +85,11 @@ This activity will help us understand more about configuring the [Menu\](https:/
 
 8. Now build the *Small Appliances* secondary menu in `menu.jsonc`. As with the *Major Appliances*, you must set the `orientation` prop value to `vertical` and configure the following *Menu Items* in the block children list: `menu-item#mixers`, `menu-item#toasters` and `menu-item#coffee`;
 
-9. Based on the previous steps, dot he same with *Electronics*: create your Submenu (\`vtex.menu@2.x:submenu#electronics\`) and secondary Menu. Thereafter, build the latter with the same prop value (\`vertical\`) and configure the following *Menu Items* in the block's children list: `menu-item#cameras`, `menu-item#laptops` and `menu-item#tvs`. 
+9. Based on the previous steps, do the same with *Electronics*: create your Submenu (\`vtex.menu@2.x:submenu#electronics\`) and secondary Menu. Thereafter, build the latter with the same prop value (\`vertical\`) and configure the following *Menu Items* in the block's children list: `menu-item#cameras`, `menu-item#laptops` and `menu-item#tvs`. 
 
-:information\_source: Remember to access the Menu's [documentação\](https://vtex.io/docs/components/all/vtex.menu/) if your have any questions during the activity. 
+:information_source: Remember to access the Menu's [documentação](https://vtex.io/docs/components/all/vtex.menu/) if your have any questions during the activity. 
 
-Expected result: !\[\](https://appliancetheme.vteximg.com.br/arquivos/imagem-menu.png)
+Expected result: ![](https://appliancetheme.vteximg.com.br/arquivos/imagem-menu.png)
 
 ----
 
