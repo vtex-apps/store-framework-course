@@ -35,7 +35,7 @@ export default {
         const iframe = ctx.blocksFileContent['iframe']
 
         return (
-          iframe.props.src === 'https://www.instagram.com/p/B37Zfd6FobU/embed' &&
+          iframe.props.src === 'https://www.instagram.com/p/B973Qp8BacC/embed' &&
           iframe.props.width === 800 &&
           iframe.props.height === 1000
         )
