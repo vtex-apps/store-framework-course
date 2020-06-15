@@ -8,7 +8,7 @@ const gabaritoImgCss = {
 
 const vintageImgCss = {
   '.infoCardContainer--vintage': {
-    backgroundColor: '#EDCFD1',
+    backgroundColor: '#edcfd1',
   },
 }
 

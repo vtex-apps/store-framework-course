@@ -41,11 +41,11 @@ export default {
         const infoCardTitle = 'info-card#button-left'
         const infoCardProps = ctx.parsedBlocks?.[infoCardTitle].props
 
-        const hasLink = infoCardProps.callToActionMode === 'link'
-        const isTextOnTheLeft = infoCardProps.textPosition === 'left'
+        const hasLink = (infoCardProps.callToActionMode).toLowerCase() === 'link'
+        const isTextOnTheLeft = (infoCardProps.textPosition).toLowerCase() === 'left'
         const isCorrectImage =
           infoCardProps.imageUrl === 'https://appliancetheme.vteximg.com.br/arquivos/cozinha-cinza-min.png'
-        const isCorrectTitle = infoCardProps.headline === 'Shining chrome'
+        const isCorrectTitle = (infoCardProps.headline).toLowerCase() === 'shining chrome'
 
         return hasLink && isTextOnTheLeft && isCorrectImage && isCorrectTitle
       },
