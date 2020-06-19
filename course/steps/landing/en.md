@@ -46,8 +46,7 @@ The query schema is one of the [custom query search result props](https://vtex.i
   - Sorts by latest release date;
   - Hides unavailable items;
   - Displays a max of 8 items per page;
-  - Uses "Blue Top Retro Camera" as *query*;
-  - Uses `ft` as mapField.
+  - Uses "Blue Top Retro Camera" as *query*.
 
 ----
 

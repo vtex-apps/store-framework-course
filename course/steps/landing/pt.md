@@ -46,8 +46,7 @@ A query schema é uma das [props do search result custom query](https://vtex.io/
   - Ordena por data de lançamento de forma descrescente;
   - Esconda itens indisponíveis;
   - Mostre um máximo de 8 itens por página;
-  - Use como *query* "Blue Top Retro Camera";
-  - Use como mapField `ft`.
+  - Use como *query* "Blue Top Retro Camera".
 
 ---
 

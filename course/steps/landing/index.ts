@@ -1,4 +1,4 @@
-const EXPECTED_PROPS = ['orderByField', 'hideUnavailableItems', 'maxItemsPerPage', 'queryField', 'mapField']
+const EXPECTED_PROPS = ['orderByField', 'hideUnavailableItems', 'maxItemsPerPage', 'queryField']
 
 export default {
   tests: [
