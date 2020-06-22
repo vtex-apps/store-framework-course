@@ -48,7 +48,6 @@ con el que puede controlar la búsqueda que debería hacer nuestro *landing page
   - Esconda ítems indisponibles.
   - Muestre un máximo de 8 ítems por página.
   - Use como *query* "Blue Top Retro Camera".
-  - Use como mapField `ft` .
 
 ---
 
