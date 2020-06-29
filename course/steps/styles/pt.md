@@ -45,13 +45,14 @@ Em um cabeçalho nível 1, por exemplo, ao inspecionar descobrimos que seu taman
 
 ## Atividade
 
-<img src="https://user-images.githubusercontent.com/18701182/69850673-8b35b500-125e-11ea-824b-3f3f3235e575.png" width="400" />
-
-
 1. No arquivo `style.json`, substitua todas as ocorrências das cores que encontramos, trocando:
   - **#072c75** por **#45a6a3**
   - **#0F3E99** por **#52BAB7**
 2. Mude o tamanho da fonte heading level 1 para que agora tenha 2.5 rem de altura
+
+O resultado esperado pode ser visto abaixo:
+
+<img src="https://user-images.githubusercontent.com/18701182/69850673-8b35b500-125e-11ea-824b-3f3f3235e575.png" width="400" />
 
 ---
 

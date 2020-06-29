@@ -46,13 +46,14 @@ En una cabecera nivel 1, por ejemplo, cuando inspeccionamos descubrimos que su t
 
 ## Actividad
 
-<img src="https://user-images.githubusercontent.com/18701182/69850673-8b35b500-125e-11ea-824b-3f3f3235e575.png" width="400" />
-
-
 1. En el archivo `style.json`, reemplace todas las ocurrencias de los colores que encontramos, cambiando:
   - **#072c75** por **#45a6a3**
   - **#0F3E99** por **#52BAB7**
 2. Cambie el tamaño de la fuente heading level 1 para que ahora tenga 2.5 rem de altura.
+
+El resultado final esperado debe ser semejante a este:
+
+<img src="https://user-images.githubusercontent.com/18701182/69850673-8b35b500-125e-11ea-824b-3f3f3235e575.png" width="400" />
 
 ---
 
