@@ -91,7 +91,7 @@ Y entonces declare un `background-color` para este info card específico en su a
 
 ```css
 .infoCardContainer--vintage {
-  background-color: #EDCFD1
+  background-color: #edcfd1
 }
 ```
 Observe el efecto alcanzado al enlazar su app.

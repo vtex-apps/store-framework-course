@@ -92,7 +92,7 @@ E então declare uma `background-color` para este infocard específico no seu ar
 
 ```css
 .infoCardContainer--vintage {
-  background-color: #EDCFD1
+  background-color: #edcfd1
 }
 ```
 

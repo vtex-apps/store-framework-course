@@ -31,8 +31,8 @@ Analyzing the [recipe](https://vtex.io/docs/recipes/style/using-css-handles-for-
 
     ```css
     .{CSSHandle}--{blockClass} {
-        {PropriedadeDeCSS}: {ValorDesejado};
-        {PropriedadeDeCSS}: {ValorDesejado};
+        {CSSProperty}: {desiredValue};
+        {CSSProperty}: {desiredValue};
     }
     ```
 
@@ -92,7 +92,7 @@ Thereafter, declare a `background-color` for this specific info card in your CSS
 
 ```css
 .infoCardContainer--vintage {
-  background-color: #EDCFD1
+  background-color: #edcfd1
 }
 ```
 
