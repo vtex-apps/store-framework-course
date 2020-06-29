@@ -118,6 +118,6 @@ Observe el efecto alcanzado al enlazar su app.
 
 [Crear feedback](https://docs.google.com/forms/d/e/1FAIpQLSeaWrm0Hogm-txm5Ww6mUa68eDuE3WnpFjUSVJ3Wi3dnmCb7A/viewform?usp=pp_url&entry.1784529524=CSS+handles+e+o+poder+da+customiza%C3%A7%C3%A3o+de+blocos) 
 
-----
+---
 
 Si aún tiene alguna duda sobre cómo enviar su respuesta, puede revisar [aquí](https://github.com/{{ user.username }}/store-framework/issues/3).

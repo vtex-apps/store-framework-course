@@ -13,7 +13,7 @@ Para incluir textos en el bloque de `rich-text`, es necesario utilizar la prop `
 ```json
   "rich-text#home1": {
     "props": {
-      "text": "Meu texto",
+      "text": "Mi texto",
       "textPosition": "LEFT",
       "textAlignment": "LEFT"
     }

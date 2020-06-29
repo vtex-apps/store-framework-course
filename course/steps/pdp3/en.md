@@ -63,13 +63,21 @@ Develop the product page by adding the step below to `product.jsonc`:
 
 5. Review the [documentation](https://vtex.io/docs/components/product/vtex.store-components/sku-selector) to make the `sku-selector` do the following: 
   - start without any selected SKU;
-  - show the name by SKU variation;
+  - show the name by SKU variation, using property value as `image`, as it's shown in the documentation mentioned before;
   - display an error message if no SKU variation was selected.
   
   :information_source: Remember to read through the Stack Layout [documentation](https://vtex.io/docs/app/vtex.stack-layout) if you have any questions during the activity.
 
 :information_source: Remember to use the `/3-colors-retro-stand-mixer/p` product to test this step. 
 
-----
+---
+
+### :no_entry_sign: Are you lost?
+
+Is there any problem with this step? What about sending us a feedback? :pray:
+
+[Submit feedback](https://docs.google.com/forms/d/e/1FAIpQLSeaWrm0Hogm-txm5Ww6mUa68eDuE3WnpFjUSVJ3Wi3dnmCb7A/viewform?usp=pp_url&entry.1784529524=Rodap%C3%A9)
+
+---
 
 If you're still unsure as to how to send your answers, click [here](https://github.com/{{ user.username }}/store-framework/issues/3).

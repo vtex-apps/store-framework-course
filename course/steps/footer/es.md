@@ -73,6 +73,13 @@ Resultado esperado:
 
 [Crear feedback](https://docs.google.com/forms/d/e/1FAIpQLSeaWrm0Hogm-txm5Ww6mUa68eDuE3WnpFjUSVJ3Wi3dnmCb7A/viewform?usp=pp_url&entry.1784529524=Rodap%C3%A9) 
 
-----
+---
 
 Si aún tiene alguna duda sobre cómo enviar su respuesta, puede revisar [aquí](https://github.com/{{ user.username }}/store-framework/issues/3).
+
+---
+
+## ¡Muy bien!
+Este es el último paso del curso de Store Framework. Lo has hecho excelente y esperamos que hayas aprendido bastante hasta ahora. **¡Felicitaciones!**
+
+Si aún deseas continuar aprendiendo más sobre cómo desarrollar utilizando VTEX IO, te animamos a empezar nuestro próximo curso, que se centra en enseñar cómo desarrollar bloques personalizados para VTEX Store Framework. Puedes encontrarlo en: [Store Block Course on Learning Lab](https://lab.github.com/vtex-trainings/vtex-store-block-course).

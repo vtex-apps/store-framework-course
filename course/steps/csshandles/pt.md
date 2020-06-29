@@ -113,7 +113,6 @@ Observe o efeito atingido linkando sua app.
 
 ---
 
-
 ### :no_entry_sign: Perdido? 
 
 Há algum problema com esse passo? Que tal nos enviar um feedback? :pray:

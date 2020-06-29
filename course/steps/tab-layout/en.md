@@ -162,6 +162,14 @@ In this activity, we will create the simple structure of a tab layout, as shown 
   
   :information_source: Remember to access the [Tab Layout](https://vtex.io/docs/components/layout/vtex.tab-layout) and [Rich Text](https://vtex.io/docs/components/all/vtex.rich-text/) documentation for any questions during the activity. 
 
-----
+---
+
+### :no_entry_sign: Are you lost?
+
+Is there any problem with this step? What about sending us a feedback? :pray:
+
+[Submit feedback](https://docs.google.com/forms/d/e/1FAIpQLSeaWrm0Hogm-txm5Ww6mUa68eDuE3WnpFjUSVJ3Wi3dnmCb7A/viewform?usp=pp_url&entry.1784529524=Rodap%C3%A9)
+
+---
 
 If you're still unsure as to how to send your answers, click [here](https://github.com/{{ user.username }}/store-framework/issues/3).

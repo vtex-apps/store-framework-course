@@ -111,6 +111,14 @@ Check out the result by linking your app.
 
 ![image](https://user-images.githubusercontent.com/12139385/70145478-ead8f980-167e-11ea-8951-5d4b98e6d5c0.png)
 
-----
+---
 
-If you're still unsure as to how to send your answers, click [here](https://github.com/{{ user.username }}/store-framework/issues/3) to go through that step again.
+### :no_entry_sign: Are you lost?
+
+Is there any problem with this step? What about sending us a feedback? :pray:
+
+[Submit feedback](https://docs.google.com/forms/d/e/1FAIpQLSeaWrm0Hogm-txm5Ww6mUa68eDuE3WnpFjUSVJ3Wi3dnmCb7A/viewform?usp=pp_url&entry.1784529524=Rodap%C3%A9)
+
+---
+
+If you're still unsure as to how to send your answers, click [here](https://github.com/{{ user.username }}/store-framework/issues/3).
