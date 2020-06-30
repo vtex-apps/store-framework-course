@@ -85,11 +85,13 @@ This activity will help us understand more about configuring the [Menu](https://
 
 8. Now build the *Small Appliances* secondary menu in `menu.jsonc`. As with the *Major Appliances*, you must set the `orientation` prop value to `vertical` and configure the following *Menu Items* in the block children list: `menu-item#mixers`, `menu-item#toasters` and `menu-item#coffee`;
 
-9. Based on the previous steps, do the same with *Electronics*: create your Submenu (\`vtex.menu@2.x:submenu#electronics\`) and secondary Menu. Thereafter, build the latter with the same prop value (\`vertical\`) and configure the following *Menu Items* in the block's children list: `menu-item#cameras`, `menu-item#laptops` and `menu-item#tvs`. 
+9. Based on the previous steps, do the same with *Electronics*: create your Submenu (`vtex.menu@2.x:submenu#electronics`) and secondary Menu. Thereafter, build the latter with the same prop value (`vertical`) and configure the following *Menu Items* in the block's children list: `menu-item#cameras`, `menu-item#laptops` and `menu-item#tvs`. 
 
 :information_source: Remember to access the Menu's [documentação](https://vtex.io/docs/components/all/vtex.menu/) if your have any questions during the activity. 
 
-Expected result: ![](https://appliancetheme.vteximg.com.br/arquivos/imagem-menu.png)
+Expected result:
+
+<img src="https://appliancetheme.vteximg.com.br/arquivos/imagem-menu.png" width="400" />
 
 ---
 

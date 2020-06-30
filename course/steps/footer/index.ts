@@ -88,8 +88,8 @@ export default {
         const showInColor = socialNetworkProps?.['showInColor']
         let success = true
         success = success && showInColor
-        const requiredSocialNetworks = ['Facebook', 'Instagram', 'Twitter']
-        success = success && socialNetworks.every((network: any) => requiredSocialNetworks.includes(network.name))
+        const requiredSocialNetworks = ['facebook', 'instagram', 'twitter']
+        success = success && socialNetworks.every((network: any) => requiredSocialNetworks.includes(network.name.toLowerCase()))
         return Boolean(success)
       },
     },

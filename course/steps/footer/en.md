@@ -78,7 +78,7 @@ Is there any problem with this step? What about sending us a feedback? :pray:
 If you're still unsure as to how to send your answers, click [here](https://github.com/{{ user.username }}/store-framework/issues/3).
 
 ---
-## Well done! 
+## Well done!
 This is the last step of the Store Framework course, you did really well and we hope you've learned a lot until this moment. **Congratulations!**
 
 If you want to continue learning more about how to develop using VTEX IO, we encourage you to start our next course, which focus on teaching how to develop custom blocks for VTEX Store Framework. You can find it in the [Store Block Course on Learning Lab](https://lab.github.com/vtex-trainings/vtex-store-block-course).
