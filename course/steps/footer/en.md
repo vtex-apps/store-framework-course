@@ -65,6 +65,20 @@ We will not implement the menu during this activity, since it's already be dealt
 Expected result:
 ![image](https://user-images.githubusercontent.com/12139385/70229436-00105f80-1735-11ea-9c26-9f16a3820f52.png)
 
-----
+---
+
+### :no_entry_sign: Are you lost?
+
+Is there any problem with this step? What about sending us a feedback? :pray:
+
+[Submit feedback](https://docs.google.com/forms/d/e/1FAIpQLSeaWrm0Hogm-txm5Ww6mUa68eDuE3WnpFjUSVJ3Wi3dnmCb7A/viewform?usp=pp_url&entry.1784529524=Rodap%C3%A9)
+
+---
 
 If you're still unsure as to how to send your answers, click [here](https://github.com/{{ user.username }}/store-framework/issues/3).
+
+---
+## Well done!
+This is the last step of the Store Framework course, you did really well and we hope you've learned a lot until this moment. **Congratulations!**
+
+If you want to continue learning more about how to develop using VTEX IO, we encourage you to start our next course, which focus on teaching how to develop custom blocks for VTEX Store Framework. You can find it in the [Store Block Course on Learning Lab](https://lab.github.com/vtex-trainings/vtex-store-block-course).

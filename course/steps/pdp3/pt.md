@@ -63,7 +63,7 @@ Evolua a página de produto adicionando os passos abaixo ao arquivo `product.jso
 
 5. Consulte a [documentação](https://vtex.io/docs/components/product/vtex.store-components/sku-selector) para fazer com que o `sku-selector`: 
   - comece sem nenhum SKU selecionado;
-  - mostre o nome por variação de sku;
+  - mostre o nome por variação de sku, utilizando o valor da propriedade como `image`, que consta na documentação mencionada anteriormente;
   - mostre erro se nenhuma variação de sku for selecionada.
   
   :information_source: Lembre-se de acessar a [documentação](https://vtex.io/docs/app/vtex.stack-layout) do Stack Layout caso tenha alguma dúvida durante a atividade.

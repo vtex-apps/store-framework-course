@@ -84,6 +84,7 @@ During this activity, we will play around a little with the [Rich Text](https://
 
 1. Add the code given above to `home.jsonc` and declare the `responsive-layout` block in the `store.home` template;
 2. In `rich-text#mobile`, alter the markdown of the first sentence to `h3` and of the second to `h4`;
+    > If you do not remember how is the Markdown syntax, you can check it in the [**Markdown Documentation**](https://www.markdownguide.org/).
 3. Add `image#desktop` as a child of `responsive-layout.desktop#desktop`. Repeat the process with `image#mobile` and `responsive-layout.mobile#mobile`;
 4. Declare the following Image blocks:
 
@@ -109,10 +110,18 @@ During this activity, we will play around a little with the [Rich Text](https://
     },
     ```
 
-5. When analyzing the [componente Image](https://vtex.io/docs/components/general/vtex.store-components/image) props, set the two images' max width to `100%`.
+5. When analyzing the [Image component](https://vtex.io/docs/components/general/vtex.store-components/image) props, set the two images' max width to `100%`.
 
 :information_source: Remember to access the Responsive Layout [documentation]((https://vtex.io/docs/components/layout/vtex.responsive-layout)) if you have any question during your activity.
 
-----
+---
+
+### :no_entry_sign: Are you lost?
+
+Is there any problem with this step? What about sending us a feedback? :pray:
+
+[Submit feedback](https://docs.google.com/forms/d/e/1FAIpQLSeaWrm0Hogm-txm5Ww6mUa68eDuE3WnpFjUSVJ3Wi3dnmCb7A/viewform?usp=pp_url&entry.1784529524=Rodap%C3%A9)
+
+---
 
 If you're still unsure as to how to send your answers, click [here](https://github.com/{{ user.username }}/store-framework/issues/3).

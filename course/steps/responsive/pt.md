@@ -86,6 +86,7 @@ Nessa atividade, vamos brincar um pouco com o markdown do [Rich Text](https://vt
 
 1. Adicione o código proposto acima no arquivo `home.jsonc` e declare os blocos de `responsive-layout` no template `store.home`;
 2. No `rich-text#mobile`, altere o markdown da primeira frase para `h3` e da segunda para `h4`;
+    > Se você não se lembra da sintaxe de Markdown, é possível consultá-la em [**Markdown Documentation**](https://www.markdownguide.org/).
 3. Adicione `image#desktop` como children de `responsive-layout.desktop#desktop`. Faça o mesmo com `image#mobile`  em `responsive-layout.mobile#mobile`;
 4. Declare os seguintes blocos de Image:
 
