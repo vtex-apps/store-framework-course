@@ -12,24 +12,24 @@ A partir de este entendimiento, podemos mejorar la configuración del [Menú](ht
 
 De acuerdo con lo que se practicó en la actividad anterior y lo que se aprendió sobre Flex Layout, apliquemos Flex Layout en el Submenú de *Major Appliance*.
 
-1. En el archivo `menu.jsonc`, remueva el bloque de código en que son definidos `vtex.menu@2.x:submenu#major` y suyos hijos:
+1. En el archivo `menu.jsonc`, remueva el bloque de código en que son definidos `vtex.menu@2.x:submenu#major` y suyos hijos. Este bloque será declarado en un nuevo archivo pronto:
     ```json
-    "vtex.menu@2.x:submenu#major": { 
+    "vtex.menu@2.x:submenu#major": {
           "children":[ "vtex.menu@2.x:menu#major" ]
       },
-      "vtex.menu@2.x:menu#major": { 
-          "children": [ 
-              "menu-item#refrigerators", 
-              "menu-item#ovens", 
-              "menu-item#washers" 
-          ], 
-          "props": { 
-              "orientation": "vertical" 
-          }
-      },
+    "vtex.menu@2.x:menu#major": {
+        "children": [
+            "menu-item#refrigerators",
+            "menu-item#ovens",
+            "menu-item#washers"
+        ],
+        "props": {
+            "orientation": "vertical"
+        }
+    },
     ```
 
-2. Crea el archivo `menu-flex.jsonc`; `flex-layout.row#major` estará en la lista de *children* del bloque `vtex.menu@2.x:submenu#major` y defina como:
+2. Crea el archivo `menu-flex.jsonc`, el bloque de código arriba necesita estar en esto archivo; `flex-layout.row#major` estará en la lista de *children* del bloque `vtex.menu@2.x:submenu#major` y defina como:
 
     ```json
     {

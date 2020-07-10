@@ -12,24 +12,24 @@ A partir desse entendimento, podemos melhorar a configuração do [Menu](https:/
 
 De acordo com o que foi praticado na atividade anterior e o que foi aprendido sobre Flex Layout, vamos aplicar o Flex Layout no Submenu de *Major Appliance*. 
 
-1. No arquivo `menu.jsonc`, remova o block de código em que são definidos `vtex.menu@2.x:submenu#major` e seus filhos:
+1. No arquivo `menu.jsonc`, remova o bloco de código em que são definidos `vtex.menu@2.x:submenu#major` e seus filhos. Essas declarações serão feitas num novo arquivo em breve:
     ```json
-    "vtex.menu@2.x:submenu#major": { 
+    "vtex.menu@2.x:submenu#major": {
           "children":[ "vtex.menu@2.x:menu#major" ]
       },
-      "vtex.menu@2.x:menu#major": { 
-          "children": [ 
-              "menu-item#refrigerators", 
-              "menu-item#ovens", 
-              "menu-item#washers" 
-          ], 
-          "props": { 
-              "orientation": "vertical" 
-          }
-      },
+    "vtex.menu@2.x:menu#major": {
+        "children": [
+            "menu-item#refrigerators",
+            "menu-item#ovens",
+            "menu-item#washers"
+        ],
+        "props": {
+            "orientation": "vertical"
+        }
+    },
     ```
 
-2. Crie o arquivo `menu-flex.jsonc` file; `flex-layout.row#major` estará na lista de *children* do bloco `vtex.menu@2.x:submenu#major` e será definido como:
+2. Crie o arquivo `menu-flex.jsonc`, o código de bloco acima precisa estar neste arquivo; `flex-layout.row#major` estará na lista de *children* do bloco `vtex.menu@2.x:submenu#major` e será definido como:
 
     ```json
     {
@@ -45,7 +45,7 @@ De acordo com o que foi praticado na atividade anterior e o que foi aprendido so
     ```
 
 
-3. Agora temos que declarar os blocos definidos em  `flex-layout.row#major`. Para começar, declare o bloco `flex-layout.col#menu` com `vtex.menu@2.x:menu#major` como *children*;
+3. Agora temos que declarar os blocos definidos em `flex-layout.row#major`. Para começar, declare o bloco `flex-layout.col#menu` com `vtex.menu@2.x:menu#major` como *children*;
 4. Faça o mesmo para o bloco `flex-layout.col#img`, o declarando com `image#menu` e `rich-text#header` como *children* e as seguintes props:
 
     ```json

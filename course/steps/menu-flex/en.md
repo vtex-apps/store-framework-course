@@ -12,23 +12,23 @@ With this in mind, we can improve the previous activity's [Menu](https://vtex.io
 
 According to what we did in the last activity and what was learned about Flex Layout, let's apply Flex Layout to the *Major Appliances* submenu. 
 
-1. In the `menu.jsonc` file, remove the block of code in which you define `vtex.menu@2.x:submenu#major` and also its children:
+1. In the `menu.jsonc` file, **remove** the block of code in which you define `vtex.menu@2.x:submenu#major` and also its children. This code block will be declared in a new file soon:
     ```json
-    "vtex.menu@2.x:submenu#major": { 
+    "vtex.menu@2.x:submenu#major": {
           "children":[ "vtex.menu@2.x:menu#major" ]
       },
-      "vtex.menu@2.x:menu#major": { 
-          "children": [ 
-              "menu-item#refrigerators", 
-              "menu-item#ovens", 
-              "menu-item#washers" 
-          ], 
-          "props": { 
-              "orientation": "vertical" 
-          }
-      },
+    "vtex.menu@2.x:menu#major": {
+        "children": [
+            "menu-item#refrigerators",
+            "menu-item#ovens",
+            "menu-item#washers"
+        ],
+        "props": {
+            "orientation": "vertical"
+        }
+    },
     ```
-2. Create the `menu-flex.jsonc` file; `flex-layout.row#major` will be in the *children* list pertaining to the `vtex.menu@2.x:submenu#major` block and it's defined as:
+2. Create the `menu-flex.jsonc` file, the code block that is declared above needs to be in this file; `flex-layout.row#major` will be in the *children* list pertaining to the `vtex.menu@2.x:submenu#major` block and it's defined as:
 
     ```json
     {
