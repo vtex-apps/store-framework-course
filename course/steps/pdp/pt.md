@@ -25,7 +25,7 @@ Nada disso quer dizer, no entanto, que esses blocos são pouco customizáveis, c
 
 ## Atividade
 
-Construa uma página de produto usando os blocos [`product-images`](https://vtex.io/docs/components/product-related/vtex.store-components/product-images), [`product-price`](https://vtex.io/docs/components/product-related/vtex.store-components/product-price), [`product-name`](https://vtex.io/docs/components/product-related/vtex.store-components/product-name) e [`buy-button`](https://vtex.io/docs/app/vtex.store-components/buy-button) no arquivo `product.jsonc` declarado dentro da pasta `store/blocks`. Esperamos que na estrutura tenhamos:  
+Clique em um produto para ir para a página de produto. Construa sua página usando os blocos [`product-images`](https://vtex.io/docs/components/product-related/vtex.store-components/product-images), [`product-price`](https://vtex.io/docs/components/product-related/vtex.store-components/product-price), [`product-name`](https://vtex.io/docs/components/product-related/vtex.store-components/product-name) e [`buy-button`](https://vtex.io/docs/app/vtex.store-components/buy-button) no arquivo `product.jsonc` declarado dentro da pasta `store/blocks`. Esperamos que na estrutura tenhamos:  
 
 1. Uma **linha** na `store.product`;
 

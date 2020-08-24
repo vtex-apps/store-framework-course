@@ -25,7 +25,7 @@ This doesn't mean that these blocks are less customizable, quite the opposite ac
 
 ## Activity
 
-Build a product page using the following blocks in `product.jsonc` and declare it in the `store/blocks` folder: [`product-images`](https://vtex.io/docs/components/product-related/vtex.store-components/product-images), [`product-price`](https://vtex.io/docs/components/product-related/vtex.store-components/product-price), [`product-name`](https://vtex.io/docs/components/product-related/vtex.store-components/product-name) and [`buy-button`](https://vtex.io/docs/app/vtex.store-components/buy-button). We expect the structure to contain the following:  
+Click on a product to go to the product page. Build the page using the following blocks in `product.jsonc` and declare it in the `store/blocks` folder: [`product-images`](https://vtex.io/docs/components/product-related/vtex.store-components/product-images), [`product-price`](https://vtex.io/docs/components/product-related/vtex.store-components/product-price), [`product-name`](https://vtex.io/docs/components/product-related/vtex.store-components/product-name) and [`buy-button`](https://vtex.io/docs/app/vtex.store-components/buy-button). We expect the structure to contain the following:  
 
 1. A **line** in `store.product`;
 
