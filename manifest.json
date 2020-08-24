@@ -1,7 +1,7 @@
 {
   "name": "store-framework",
   "vendor": "vtex",
-  "version": "0.2.0",
+  "version": "0.2.1",
   "title": "Store Framework Course",
   "description": "Course App for the Store Framework Course",
   "dependencies": {},
