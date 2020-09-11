@@ -47,7 +47,30 @@ con el que puede controlar la búsqueda que debería hacer nuestro *landing page
   - Ordene por fecha de lanzamiento de forma descendente.
   - Esconda ítems indisponibles.
   - Muestre un máximo de 8 ítems por página.
-  - Use como *query* "Blue Top Retro Camera".
+  - Use como *query* "Camera".
+
+7. Hasta ahora, probablemente no es posible ver el bloque en la *landing page*. Esto ocurre porque no has añadido un bloque al `search-result-layout.customQuery`. Para esto, añada las siguientes líneas:
+    ```diff
+    // store/blocks/search-landing.jsonc
+    {
+        ...
+        "search-result-layout.customQuery": {
+            "props": {
+                "querySchema": {
+                    "orderByField": "OrderByReleaseDateDESC",
+                    "hideUnavailableItems": true,
+                    "maxItemsPerPage": 8,
+                    "queryField": "Camera",
+                    "mapField": "ft",
+                    "skusFilter": "ALL_AVAILABLE"
+                }
+            },
+    +       "blocks": [
+    +         "search-result-layout.desktop"
+    +       ]
+        }
+    }
+    ```
 
 ---
 

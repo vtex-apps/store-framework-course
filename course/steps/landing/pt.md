@@ -46,7 +46,33 @@ A query schema é uma das [props do search result custom query](https://vtex.io/
   - Ordena por data de lançamento de forma descrescente;
   - Esconda itens indisponíveis;
   - Mostre um máximo de 8 itens por página;
-  - Use como *query* "Blue Top Retro Camera".
+  - Use como *query* "Camera".
+
+7. Neste ponto, é provável que você não esteja vendo o bloco na nova página. Isso se deve ao fato de que ainda não adicionamos nenhum bloco ao `search-result-layout.customQuery`. Você pode fazer isso adicionando as seguintes linhas:
+
+    ```diff
+    // store/blocks/search-landing.jsonc
+    {
+      ...
+      "search-result-layout.customQuery": {
+          "props": {
+              "querySchema": {
+                  "orderByField": "OrderByReleaseDateDESC",
+                  "hideUnavailableItems": true,
+                  "maxItemsPerPage": 8,
+                  "queryField": "Camera",
+                  "mapField": "ft",
+                  "skusFilter": "ALL_AVAILABLE"
+              }
+          },
+    +     "blocks": [
+    +       "search-result-layout.desktop"
+    +     ]
+      }
+    }
+    ```
+
+
 
 ---
 

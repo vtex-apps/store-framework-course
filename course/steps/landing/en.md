@@ -46,8 +46,30 @@ The query schema is one of the [custom query search result props](https://vtex.i
   - Sorts by latest release date;
   - Hides unavailable items;
   - Displays a max of 8 items per page;
-  - Uses "Blue Top Retro Camera" as *query*.
+  - Uses "Camera" as *query*.
 
+7. At this point, you're probably not seeing the block on the landing page. This is due to the fact that we have not add a block to the search-result-layout.customQuery yet. You can do that by adding the following lines:
+    ```diff
+    // store/blocks/search-landing.jsonc
+    {
+        ...
+        "search-result-layout.customQuery": {
+            "props": {
+                "querySchema": {
+                    "orderByField": "OrderByReleaseDateDESC",
+                    "hideUnavailableItems": true,
+                    "maxItemsPerPage": 8,
+                    "queryField": "Camera",
+                    "mapField": "ft",
+                    "skusFilter": "ALL_AVAILABLE"
+                }
+            },
+    +       "blocks": [
+    +         "search-result-layout.desktop"
+    +       ]
+        }
+    }
+    ```
 ---
 
 ### :no_entry_sign: Are you lost?
