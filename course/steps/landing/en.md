@@ -50,25 +50,25 @@ The query schema is one of the [custom query search result props](https://vtex.i
 
 7. At this point, you're probably not seeing the block on the landing page. This is due to the fact that we have not add a block to the search-result-layout.customQuery yet. You can do that by adding the following lines:
     ```diff
-        // store/blocks/search-landing.jsonc
-        {
-            ...
-            "search-result-layout.customQuery": {
-                "props": {
-                    "querySchema": {
-                        "orderByField": "OrderByReleaseDateDESC",
-                        "hideUnavailableItems": true,
-                        "maxItemsPerPage": 8,
-                        "queryField": "Camera",
-                        "mapField": "ft",
-                        "skusFilter": "ALL_AVAILABLE"
-                    }
-                },
+    // store/blocks/search-landing.jsonc
+    {
+        ...
+        "search-result-layout.customQuery": {
+            "props": {
+                "querySchema": {
+                    "orderByField": "OrderByReleaseDateDESC",
+                    "hideUnavailableItems": true,
+                    "maxItemsPerPage": 8,
+                    "queryField": "Camera",
+                    "mapField": "ft",
+                    "skusFilter": "ALL_AVAILABLE"
+                }
+            },
     +       "blocks": [
-    +           "search-result-layout.desktop"
+    +         "search-result-layout.desktop"
     +       ]
-            }
         }
+    }
     ```
 ---
 
