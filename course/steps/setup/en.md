@@ -1,4 +1,4 @@
-# Basic configurations
+# Store Framework course
 
 > **This content was moved to another place. We no longer support these courses and learning portal.**
 

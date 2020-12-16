@@ -11,9 +11,9 @@
     {
       "folder": "setup",
       "title": {
-        "en": "Basic configurations",
-        "es": "Configuraciones básicas",
-        "pt": "Configurações básicas"
+        "en": "Store Framework course",
+        "es": "Curso del Store Framework",
+        "pt": "Curso de Store Framework"
       },
       "description": {
         "en": "Store Framework development prerequisites",

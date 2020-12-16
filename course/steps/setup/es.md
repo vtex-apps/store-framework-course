@@ -1,4 +1,4 @@
-# Configuraciones básicas
+# Curso del Store Framework
 
 > **Este contenido se ha movido a otro sitio. No damos más soporte ni a estos cursos ni a este canal de aprendizaje. Atención: hasta ahora, suportamos solamente inglés y portugués en la nueva plataforma. No tardará mucho para tenermos la versión en español.**
 

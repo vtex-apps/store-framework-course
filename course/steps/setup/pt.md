@@ -1,4 +1,4 @@
-# Configurações básicas
+# Curso de Store Framework
 
 > **Este conteúdo foi movido para um outro lugar. Não damos mais suporte a estes cursos e a este canal de aprendizado**
 
